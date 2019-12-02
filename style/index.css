@@ -1,0 +1,74 @@
+html {
+  scroll-behavior: smooth;
+}
+
+main {
+  width: 80%;
+  margin: auto;
+}
+
+main h1 {
+  text-align: center;
+  font-size: 80px;
+  letter-spacing: 8px;
+  margin-bottom: 110px;
+}
+
+main section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 150px;
+}
+
+main section #left {
+  text-align: right;
+}
+
+main section .imgCol {
+  flex: 50%;
+}
+
+main section .imgCol img {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+main section .textCol {
+  padding: 0px 50px 0 50px;
+  flex: 50%;
+}
+
+main section .textCol h2 {
+  font-size: 30px;
+  letter-spacing: 7px;
+}
+
+main section #left {
+  text-align: right;
+}
+
+/*# sourceMappingURL=index.css.map */
+/*# sourceMappingURL=index.css.map */
+/*# sourceMappingURL=index.css.map */
+/*# sourceMappingURL=index.css.map */
+/*# sourceMappingURL=index.css.map */
+/*# sourceMappingURL=index.css.map */
+/*# sourceMappingURL=index.css.map */
+/*# sourceMappingURL=index.css.map */
+/*# sourceMappingURL=index.css.map */
+/*# sourceMappingURL=index.css.map */
+/*# sourceMappingURL=index.css.map */
+/*# sourceMappingURL=index.css.map */
+/*# sourceMappingURL=index.css.map */
+/*# sourceMappingURL=index.css.map */
+/*# sourceMappingURL=index.css.map */
+/*# sourceMappingURL=index.css.map */
+/*# sourceMappingURL=index.css.map */
+/*# sourceMappingURL=index.css.map */
+/*# sourceMappingURL=index.css.map */
+/*# sourceMappingURL=index.css.map */
+/*# sourceMappingURL=index.css.map */
+/*# sourceMappingURL=index.css.map */
+
+/*# sourceMappingURL=index.css.map */
