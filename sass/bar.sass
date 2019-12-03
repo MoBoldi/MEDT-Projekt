@@ -1,3 +1,5 @@
+@import _variable
+
 body 
     padding-top: 20px
 .stats 
@@ -5,12 +7,15 @@ body
     margin: auto
     .caption 
         font-family: 'Roboto Slab'
-        font-size: 20px
+        font-size: 1.2em
+        margin: 5px 0
     .bar
         width: 100%
-        background-color: grey
-        height: 15px
+        background-color: $greyedOut
+        height: $statsHeight
+        border-radius: $barRadius
         .filled
-            background-color: blue
+            border-radius: $barRadius 0px 0px $barRadius
+            background-color: $siennaDark
             width: 0
             height: inherit

@@ -8,15 +8,18 @@ body {
 }
 .stats .caption {
   font-family: "Roboto Slab";
-  font-size: 20px;
+  font-size: 1.2em;
+  margin: 5px 0;
 }
 .stats .bar {
   width: 100%;
-  background-color: grey;
+  background-color: #e9ecef;
   height: 15px;
+  border-radius: 5px;
 }
 .stats .bar .filled {
-  background-color: blue;
+  border-radius: 5px 0px 0px 5px;
+  background-color: #745e23;
   width: 0;
   height: inherit;
 }
