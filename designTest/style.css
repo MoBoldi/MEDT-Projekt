@@ -1,0 +1,42 @@
+html {
+  height: 100%;
+}
+
+body {
+  height: inherit;
+  font-family: "Roboto Slab";
+  background-image: url("../data/background01.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+body main {
+  height: inherit;
+  display: flex;
+}
+body main #header {
+  width: 60%;
+  color: white;
+  margin: 20px;
+}
+body main #header #logo {
+  height: 10%;
+}
+body main #header #logo img {
+  width: 100px;
+  height: 100px;
+}
+body main #header #logo::after {
+  height: 60%;
+}
+body main #header #caption {
+  display: flex;
+  align-content: flex-end;
+  height: 30%;
+  margin: 20px;
+}
+body main #header #caption h1 {
+  text-shadow: 2px 2px 100px black;
+  font-size: 10em;
+}
+
+/*# sourceMappingURL=style.css.map */
