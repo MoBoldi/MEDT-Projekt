@@ -1,0 +1,24 @@
+body {
+  padding-top: 20px;
+}
+
+.stats {
+  width: 80%;
+  margin: auto;
+}
+.stats .caption {
+  font-family: "Roboto Slab";
+  font-size: 20px;
+}
+.stats .bar {
+  width: 100%;
+  background-color: grey;
+  height: 15px;
+}
+.stats .bar .filled {
+  background-color: blue;
+  width: 0;
+  height: inherit;
+}
+
+/*# sourceMappingURL=bar.css.map */

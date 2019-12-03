@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <link href="../style/bar.css" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="stats">
+        <h1 class="caption">
+            Öl
+        </h1>
+        <div class="bar">
+            <div class="filled" id="oil"></div>
+        </div>
+    </div>
+
+    <script>
+        let oelValue = "60%"; 
+
+        document.getElementById('oil').style.width = oelValue;
+        /*$(function () {
+            $('[data-toggle="tooltip"]').tooltip({
+                trigger: 'manual'
+            }).tooltip('show');
+        });
+
+        // $( window ).scroll(function() {   
+        // if($( window ).scrollTop() > 10){  // scroll down abit and get the action   
+        $(".progress-bar").each(function () {
+            each_bar_width = $(this).attr('aria-valuenow');
+            $(this).width(each_bar_width + '%');
+        });
+
+        //  }  
+        // });*/
+    </script>
+</body>
+
+</html>
