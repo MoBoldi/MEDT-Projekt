@@ -6,44 +6,36 @@ main {
   width: 80%;
   margin: auto;
 }
-
 main h1 {
   text-align: center;
   font-size: 80px;
   letter-spacing: 8px;
   margin-bottom: 110px;
 }
-
 main section {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 150px;
 }
-
 main section #left {
   text-align: right;
 }
-
 main section .imgCol {
   flex: 50%;
 }
-
 main section .imgCol img {
   width: 100%;
   box-sizing: border-box;
 }
-
 main section .textCol {
   padding: 0px 50px 0 50px;
   flex: 50%;
 }
-
 main section .textCol h2 {
   font-size: 30px;
   letter-spacing: 7px;
 }
-
 main section #left {
   text-align: right;
 }
@@ -69,23 +61,19 @@ header {
   /*.placeholder
   *  flex-grow: 1*/
 }
-
 header #headerSides {
   flex-grow: 1;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 header #headerSides p {
   font-size: 15px;
 }
-
 header #headerSides img {
   width: 150px;
   height: 150px;
 }
-
 header nav {
   margin: 0 150px 0 150px;
   display: flex;
@@ -93,7 +81,6 @@ header nav {
   align-items: center;
   flex-grow: 5;
 }
-
 header nav p {
   text-align: center;
   flex-grow: 1;
@@ -105,13 +92,11 @@ footer {
   width: 80%;
   margin: auto;
 }
-
 footer #socialMedia {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 footer img {
   margin: 0 20px 0 20px;
   width: 50px;
@@ -120,7 +105,6 @@ footer img {
   box-sizing: content-box;
   transition: width 0.4s;
 }
-
 footer img:hover {
   width: 55px;
 }
@@ -130,7 +114,6 @@ footer img:hover {
   right: 50px;
   top: 45%;
 }
-
 #arrows img {
   width: 50px;
   filter: invert(100%);
@@ -144,7 +127,5 @@ footer img:hover {
   box-shadow: 0.5px 0.5px white;
   margin-bottom: 20px;
 }
-
-/*# sourceMappingURL=general.css.map */
 
 /*# sourceMappingURL=general.css.map */
