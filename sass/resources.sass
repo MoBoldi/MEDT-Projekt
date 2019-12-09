@@ -2,6 +2,18 @@
 
 body 
     padding-top: 20px
+#resourcesNav
+    margin: auto
+    margin-top: 20px
+    font-size: 18px
+    width: 20%
+    max-width: 300px
+    display: flex
+    text-align: center
+    p 
+        flex-grow: 1
+        flex-basis: 0
+
 .stats 
     width: 80%
     margin: auto
@@ -13,9 +25,10 @@ body
         width: 100%
         background-color: $greyedOut
         height: $statsHeight
-        border-radius: $barRadius
+        border-radius: 6px 5px 5px 6px
         .filled
-            border-radius: $barRadius 0px 0px $barRadius
+            border-radius: 5px 0px 0px 5px
             background-color: $siennaDark
             width: 0
             height: inherit
+            margin: 0
