@@ -41,4 +41,23 @@ main section #left {
   text-align: right;
 }
 
-/*# sourceMappingURL=index.css.map */
+section {
+  height: 300px;
+}
+section .textCol {
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+}
+section .textCol h2 {
+  flex-basis: 100px;
+  flex-shrink: 3;
+  max-height: 30%;
+  font-size: 2em;
+}
+section .textCol p {
+  flex-shrink: 7;
+  text-overflow: ellipsis;
+}
+
+/*# sourceMappingURL=blog.css.map */

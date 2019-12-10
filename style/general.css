@@ -23,6 +23,7 @@ main section #left {
 }
 main section .imgCol {
   flex: 50%;
+  box-shadow: 0 0 300px 1px black;
 }
 main section .imgCol img {
   width: 100%;
