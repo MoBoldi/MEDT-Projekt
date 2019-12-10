@@ -2,7 +2,8 @@
 @import _variable
 @import ./index
 
-    
+body, html 
+    margin: 0
 body 
     //background-color: #01345b
     //background-image: linear-gradient(to bottom right, #0462aa, #01345b)
@@ -18,38 +19,43 @@ body
     height: 100vh
 
 header 
-    margin-top: 40px
+    padding-top: 40px
     display: flex
     justify-content: center
     align-items: centers
     font-size: 20px
     /*.placeholder
         flex-grow: 1*/
-    #headerSides
+    .headerSides
         flex-grow: 1
+        flex-basis: 0
         display: flex
         justify-content: center
         align-items: center
-        p
-            font-size: 15px
         img
-            width: 150px
-            height: 150px
+            width: 70px
+            height: 70px
     nav 
         margin: 0 150px 0 150px
         display: flex
         justify-content: center
         align-items: center 
         flex-grow: 5
+        flex-basis: 0
         p 
             text-align: center
             flex-grow: 1
+            flex-basis: 0
+            a
+                color: white
+                text-decoration: none
 
 footer
     height: 150px
     padding-bottom: 500px
     width: $contentSize
     margin: auto
+    margin-top: 250px
     #socialMedia
         display: flex
         justify-content: center
@@ -59,23 +65,15 @@ footer
         width: 50px
         filter: invert(100%)
         padding-top: -10px
-        box-sizing: content-box
         transition: width 0.4s
         &:hover
             width: 55px
 
-#arrows
-    position: fixed
-    right: 50px
-    top: 45%
-    img 
-        width: 50px
-        filter: invert(100%)
-    
+
 #selfmadeHR 
     margin: auto
     width: $contentSize
-    height: 1px
+    height: 2px
     background-color: white
     box-shadow: 0.5px 0.5px white
     margin-bottom: 20px

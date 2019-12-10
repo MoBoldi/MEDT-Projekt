@@ -10,15 +10,14 @@ main h1 {
   text-align: center;
   font-size: 80px;
   letter-spacing: 8px;
-  margin-bottom: 110px;
 }
 main section {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 150px;
+  padding-top: 150px;
 }
-main section #left {
+main section .left {
   text-align: right;
 }
 main section .imgCol {
@@ -41,6 +40,10 @@ main section #left {
   text-align: right;
 }
 
+body, html {
+  margin: 0;
+}
+
 body {
   background-image: url("../data/background01.jpg");
   background-size: cover;
@@ -54,7 +57,7 @@ body {
 }
 
 header {
-  margin-top: 40px;
+  padding-top: 40px;
   display: flex;
   justify-content: center;
   align-items: centers;
@@ -62,18 +65,16 @@ header {
   /*.placeholder
   *  flex-grow: 1*/
 }
-header #headerSides {
+header .headerSides {
   flex-grow: 1;
+  flex-basis: 0;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-header #headerSides p {
-  font-size: 15px;
-}
-header #headerSides img {
-  width: 150px;
-  height: 150px;
+header .headerSides img {
+  width: 70px;
+  height: 70px;
 }
 header nav {
   margin: 0 150px 0 150px;
@@ -81,10 +82,16 @@ header nav {
   justify-content: center;
   align-items: center;
   flex-grow: 5;
+  flex-basis: 0;
 }
 header nav p {
   text-align: center;
   flex-grow: 1;
+  flex-basis: 0;
+}
+header nav p a {
+  color: white;
+  text-decoration: none;
 }
 
 footer {
@@ -92,6 +99,7 @@ footer {
   padding-bottom: 500px;
   width: 80%;
   margin: auto;
+  margin-top: 250px;
 }
 footer #socialMedia {
   display: flex;
@@ -103,27 +111,16 @@ footer img {
   width: 50px;
   filter: invert(100%);
   padding-top: -10px;
-  box-sizing: content-box;
   transition: width 0.4s;
 }
 footer img:hover {
   width: 55px;
 }
 
-#arrows {
-  position: fixed;
-  right: 50px;
-  top: 45%;
-}
-#arrows img {
-  width: 50px;
-  filter: invert(100%);
-}
-
 #selfmadeHR {
   margin: auto;
   width: 80%;
-  height: 1px;
+  height: 2px;
   background-color: white;
   box-shadow: 0.5px 0.5px white;
   margin-bottom: 20px;
