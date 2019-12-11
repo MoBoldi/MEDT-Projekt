@@ -9,19 +9,21 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
     <link href="../style/resources.css" rel="stylesheet">
     <link href="../style/general.css" rel="stylesheet" type="text/css">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://unpkg.com/zdog@1/dist/zdog.dist.min.js"></script>
-    <script src="zdog-demo.js"></script>
+    <!--<script src="zdog-demo.js"></script>-->
+   
 </head>
 
 <body>
     <?php include "./header.html" ?>
     <div id="resourceNav">
-        <p class="resourceNav">charts</p>
+        <p class="test" id="charts">charts</p>
         <p>-</p>
-        <p class="resourceNav">earth</p>
+        <p class="test" id="earth">earth</p>
         <p>-</p>
-        <p class="resourceNav">numbers</p>
+        <p class="test" id="numbers">numbers</p>
     </div>
     <div id="resourceContent">
         <main>
@@ -50,19 +52,34 @@
                 </div>
             </div>
         </main>
-        <main>
+        <main style="display: flex; margin-top: -10vh">
             <div class="container">
                 <canvas class="illo"></canvas>
-                <button class="reset-button">Reset</button>
-                <p class="text">Click &amp; drag to rotate</p>
-                <p class="text">Made with <a href="https://zzz.dog/" target="_blank">Z-🐶</a></p>
             </div>
-
+            <div class="container">
+              <canvas class="illo"></canvas>
+            </div>
         </main>
         <main>
-            <p>Dies ist ein Typoblindtext. An ihm kann man sehen, ob alle Buchstaben da sind und wie sie aussehen. Manchmal benutzt man Worte wie Hamburgefonts, Rafgenduks oder Handgloves, um Schriften zu testen. Manchmal Sätze, die alle Buchstaben des Alphabets enthalten - man nennt diese Sätze »Pangrams«. Sehr bekannt ist dieser: The quick brown fox jumps over the lazy old dog. Oft werden in Typoblindtexte auch fremdsprachige Satzteile eingebaut (AVAIL® and Wefox™ are testing aussi la Kerning), um die Wirkung in anderen Sprachen zu testen. In Lateinisch sieht zum Beispiel fast jede Schrift gut aus. Quod erat demonstrandum. Seit 1975 fehlen in den meisten Testtexten die Zahlen, weswegen nach TypoGb. 204 § ab dem Jahr 2034 Zahlen in 86 der Texte zur Pflicht werden. Nichteinhaltung wird mit bis zu 245 € oder 368 $ bestraft. Genauso wichtig in sind mittlerweile auch Âçcèñtë, die in neueren Schriften aber fast immer enthalten sind. Ein wichtiges aber schwierig zu integrierendes Feld sind OpenType-Funktionalitäten. Je nach Software und Voreinstellungen können eingebaute Kapitälchen, Kerning oder Ligaturen (sehr pfiffig) nicht richtig dargestellt werden.Dies ist ein Typoblindtext. An ihm kann man sehen, ob alle Buchstaben da sind und wie sie aussehen. Manchmal benutzt man Worte wie Hamburgefonts, Rafgenduks oder Handgloves, um Schriften zu testen. Manchmal Sätze, die alle Buchstaben des Alphabets enthalten - man nennt diese Sätze »Pangrams«. Sehr bekannt ist dieser: The quick brown fox jumps over the lazy old dog. Oft werden in Typoblindtexte auch fremdsprachige Satzteile eingebaut (AVAIL® and Wefox™ are testing aussi la Kerning), um die Wirkung in anderen Sprachen zu testen. In Lateinisch sieht zum Beispiel fast jede Schrift gut aus. Quod erat demonstrandum. Seit 1975 fehlen in den meisten Testtexten die Zahlen, weswegen nach TypoGb. 204 § ab dem Jahr 2034 Zahlen in 86 der Texte zur Pflicht werden. Nichteinhaltung wird mit </p>
+            <p onclick="animate()">Dies ist ein Typoblindtext. An ihm kann man sehen, ob alle Buchstaben da sind und wie sie aussehen. Manchmal benutzt man Worte wie Hamburgefonts, Rafgenduks oder Handgloves, um Schriften zu testen. Manchmal Sätze, die alle Buchstaben des Alphabets enthalten - man nennt diese Sätze »Pangrams«. Sehr bekannt ist dieser: The quick brown fox jumps over the lazy old dog. Oft werden in Typoblindtexte auch fremdsprachige Satzteile eingebaut (AVAIL® and Wefox™ are testing aussi la Kerning), um die Wirkung in anderen Sprachen zu testen. In Lateinisch sieht zum Beispiel fast jede Schrift gut aus. Quod erat demonstrandum. Seit 1975 fehlen in den meisten Testtexten die Zahlen, weswegen nach TypoGb. 204 § ab dem Jahr 2034 Zahlen in 86 der Texte zur Pflicht werden. Nichteinhaltung wird mit bis zu 245 € oder 368 $ bestraft. Genauso wichtig in sind mittlerweile auch Âçcèñtë, die in neueren Schriften aber fast immer enthalten sind. Ein wichtiges aber schwierig zu integrierendes Feld sind OpenType-Funktionalitäten. Je nach Software und Voreinstellungen können eingebaute Kapitälchen, Kerning oder Ligaturen (sehr pfiffig) nicht richtig dargestellt werden.Dies ist ein Typoblindtext. An ihm kann man sehen, ob alle Buchstaben da sind und wie sie aussehen. Manchmal benutzt man Worte wie Hamburgefonts, Rafgenduks oder Handgloves, um Schriften zu testen. Manchmal Sätze, die alle Buchstaben des Alphabets enthalten - man nennt diese Sätze »Pangrams«. Sehr bekannt ist dieser: The quick brown fox jumps over the lazy old dog. Oft werden in Typoblindtexte auch fremdsprachige Satzteile eingebaut (AVAIL® and Wefox™ are testing aussi la Kerning), um die Wirkung in anderen Sprachen zu testen. In Lateinisch sieht zum Beispiel fast jede Schrift gut aus. Quod erat demonstrandum. Seit 1975 fehlen in den meisten Testtexten die Zahlen, weswegen nach TypoGb. 204 § ab dem Jahr 2034 Zahlen in 86 der Texte zur Pflicht werden. Nichteinhaltung wird mit </p>
         </main>
     </div>
+    <script>
+      function animate(){
+          console.log("test"+this);
+          switch(this.innerHTML){
+            case "charts": 
+              resourceContent.style.right = "0vw";
+              break;
+            case "earth": 
+              resourceContent.style.right = "100vw";
+              break;
+            case "numbers": 
+              resourceContent.style.right = "200vw";
+              break;
+          }
+        }
+    </script>
     <script>
         let oilValue = "40%";
         let populationValue = "60%";
@@ -71,13 +88,31 @@
         document.getElementById('oil').style.width = '80%';
         document.getElementById('population').style.width = '60%';
         document.getElementById('wastedFood').style.width = '33%';
+        //document.getElementById('resourceContent').style.right = "00vw";
+
+        let chartsButton = document.getElementById("charts");
+        let earthButton = document.getElementById("earth");
+        let numbersButton = document.getElementById("numbers");
+        let resourceContent = document.getElementById("resourceContent");
+        let buttons = document.getElementsByClassName('test');
+        console.log(buttons);
+        for (let i = 0; i < buttons.length; i++){
+          console.log('test');
+          buttons[i].addEventListener('click', animate);
+        }
+        function animate(){
+          console.log('test');
+        }
     </script>
     <script>
         /*-- Made with Zdog --*/
 
 // setting up Zdog illustration element
-const illoElem = document.querySelector('.illo');
-const illoSize = 50;
+let elements = document.getElementsByClassName('illo');
+for (let i = 0; i < elements.length; i++){
+let illoElem = elements[i];
+
+const illoSize = 70;
 const minWindowSize = Math.min( window.innerWidth - 20, window.innerHeight - 60 );
 const zoom = Math.floor( (minWindowSize / illoSize) * 0.75 );
 illoElem.setAttribute( 'width', illoSize * zoom );
@@ -113,7 +148,7 @@ new Zdog.Hemisphere({
   addTo: head,
   diameter: 40,
   stroke: false,
-  color: '#105AAA',
+  color: '#1976b5',
   rotate: { x: TAU/2 }
 });
 
@@ -392,7 +427,7 @@ function animate() {
 }
 
 animate();
-
+/*
 // reset animation
 document.querySelector('.reset-button').onclick = function() {
   isSpinning = false;
@@ -403,7 +438,9 @@ document.querySelector('.reset-button').onclick = function() {
   setTimeout(() => { 
     isSpinning = true;
   }, 2000);
-};
+};*/
+
+}
 
     </script>
 </body>

@@ -6,6 +6,7 @@ body {
   position: relative;
   display: flex;
   width: 300vw;
+  right: 100vw;
 }
 #resourceContent main {
   padding: 0 2%;

@@ -22,7 +22,6 @@ main section .left {
 }
 main section .imgCol {
   flex: 50%;
-  box-shadow: 0 0 300px 1px black;
 }
 main section .imgCol img {
   width: 100%;
@@ -36,16 +35,13 @@ main section .textCol h2 {
   font-size: 30px;
   letter-spacing: 7px;
 }
-main section #left {
-  text-align: right;
-}
 
 body, html {
   margin: 0;
 }
 
 body {
-  background-image: url("../data/background01.jpg");
+  background-color: #A3B2A3;
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -96,10 +92,10 @@ header nav p a {
 
 footer {
   height: 150px;
-  padding-bottom: 500px;
+  padding-bottom: 200px;
   width: 80%;
   margin: auto;
-  margin-top: 250px;
+  margin-top: 100px;
 }
 footer #socialMedia {
   display: flex;
@@ -122,7 +118,6 @@ footer img:hover {
   width: 80%;
   height: 2px;
   background-color: white;
-  box-shadow: 0.5px 0.5px white;
   margin-bottom: 20px;
 }
 
