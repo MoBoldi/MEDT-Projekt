@@ -18,7 +18,7 @@
             <img src="../data/kreuzfahrt.jpg" alt="Kreuzfahrt">
         </div>
         <div class="textCol">
-            <h2>11 Dinge über Kreuzfahrten</h2> <!-- max. 38 Zeichen -->
+            <h2><a href="blogSite.php">3 Dinge über Kreuzfahrten</a></h2> <!-- max. 38 Zeichen -->
             <div class="authorCol">
                 <img src="../data/profile.png" alt="profile picture">
                 <p class="authorName">by Max Mustermann</p>
@@ -44,7 +44,7 @@
 
     <script>
         document.getElementsByTagName('section')[0].style.paddingTop = "80px";
-        let maxBookmarks = 3;
+        let maxBookmarks = 2;
 
         let left = document.getElementsByClassName('left');
         for (let i = 0; i < left.length; i++){

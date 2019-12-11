@@ -1,0 +1,12 @@
+main {
+  margin-top: 50px;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  text-align: left;
+}
+main table td, main table th {
+  padding: 10px;
+}
+
+/*# sourceMappingURL=protests.css.map */
