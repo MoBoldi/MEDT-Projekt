@@ -2,7 +2,16 @@ body {
   padding-top: 20px;
 }
 
-#resourcesNav {
+#resourceContent {
+  position: relative;
+  display: flex;
+  width: 300vw;
+}
+#resourceContent main {
+  padding: 0 2%;
+}
+
+#resourceNav {
   margin: auto;
   margin-top: 20px;
   font-size: 18px;
@@ -11,7 +20,7 @@ body {
   display: flex;
   text-align: center;
 }
-#resourcesNav p {
+#resourceNav p {
   flex-grow: 1;
   flex-basis: 0;
 }

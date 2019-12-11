@@ -10,15 +10,14 @@ main h1 {
   text-align: center;
   font-size: 80px;
   letter-spacing: 8px;
-  margin-bottom: 110px;
 }
 main section {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 150px;
+  padding-top: 150px;
 }
-main section #left {
+main section .left {
   text-align: right;
 }
 main section .imgCol {
@@ -50,14 +49,23 @@ section .textCol {
   height: 300px;
 }
 section .textCol h2 {
-  flex-basis: 100px;
-  flex-shrink: 3;
-  max-height: 30%;
+  height: 30%;
+  margin: 10px 0;
   font-size: 2em;
 }
-section .textCol p {
-  flex-shrink: 7;
+section .textCol .articlePreview {
+  height: 50%;
   text-overflow: ellipsis;
+}
+section .textCol .authorCol {
+  height: 10%;
+  display: flex;
+  align-items: center;
+}
+section .textCol .authorCol img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
 }
 
 /*# sourceMappingURL=blog.css.map */
