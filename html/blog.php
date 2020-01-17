@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
     <link href="../style/general.css" rel="stylesheet" type="text/css">
     <link href="../style/blog.css" rel="stylesheet" type="text/css">
@@ -12,8 +13,8 @@
 <!--<body scroll="no" style="overflow-y: hidden" id="0">-->
 <body>
     <?php include "./header.html" ?>
+    <h1>Tipps für ein besseres Klima</h1>
     <main>
-    <h1>Tipps & Tricks</h1>
     <section id="1">
         <div class="imgCol">
             <img src="../data/kreuzfahrt.jpg" alt="Kreuzfahrt">

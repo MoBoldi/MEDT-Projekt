@@ -13,9 +13,9 @@
 
 <body>
     <?php include "header.html" ?>
-
+    <h1>3 Dinge über Kreuzfahrten</h1>
     <main>
-        <h1>3 Dinge über Kreuzfahrten</h1>
+        
         <div id="splitted">
             <div id="banner">
                 <img src="../data/kreuzfahrt.jpg" alt="Kreuzfahrtschiff">

@@ -2,9 +2,19 @@ html {
   scroll-behavior: smooth;
 }
 
+h1 {
+  text-align: center;
+  font-size: 3.5em;
+  color: white;
+  letter-spacing: 8px;
+}
+
 main {
   width: 61.25%;
+  background-color: white;
   margin: auto;
+  padding: 20px;
+  border: 1px solid #707070;
 }
 main h1 {
   text-align: center;
@@ -15,12 +25,6 @@ main section {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-main section .left {
-  text-align: right;
-}
-main section .left .textCol {
-  padding-right: 50px;
 }
 main section .imgCol {
   flex: 50%;
@@ -37,6 +41,10 @@ main section .textCol {
 main section .textCol h2 {
   font-size: 30px;
   letter-spacing: 7px;
+}
+main section .left {
+  text-align: right;
+  padding-right: 50px;
 }
 
 section {

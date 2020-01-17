@@ -3,17 +3,26 @@
         <img id="logo" src="../data/logo.png" alt="Logo">
     </div>
     <nav>
-        <p><a href="index.php">home</a></p>
-        <p>|</p>
-        <p><a href="resources.php">resources</a></p>
-        <p>|</p>
-        <p><a href="protests.php">protests</a></p>
-        <p>|</p>
-        <p><a href="blog.php">blog</a></p>
+        <div><a href="index.php">home</a></div>
+        <div>|</div>
+        <div class="dropdown">
+            <button class="dropbtn">ressourcen 
+              <i class="fa fa-caret-down" style="padding-left: 10px;"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="stats.php">Statistik</a>
+              <a href="earths.php">ökologischer Fußabdruck</a>
+              <a href="numbers.php">Zahlen</a>
+            </div>
+        </div>
+        <div>|</div>
+        <div><a href="protests.php">proteste</a></div>
+        <div>|</div>
+        <div><a href="blog.php">blog</a></div>
     </nav>
     <div class="headerSides" id="login">
-        <p>Register</p>
+        <p>register</p>
         <p>|</p>
-        <p>Login</p>
+        <p>login</p>
     </div>
 </header>
