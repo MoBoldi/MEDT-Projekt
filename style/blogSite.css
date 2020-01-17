@@ -1,0 +1,36 @@
+main {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: justify;
+}
+main h1 {
+  font-size: 50px;
+}
+main #splitted {
+  display: flex;
+}
+main #splitted #banner {
+  flex: 50%;
+  margin-top: 30px;
+}
+main #splitted #banner img {
+  width: 100%;
+  padding: 0 30px 30px 0;
+  box-sizing: border-box;
+}
+main #splitted #textCol {
+  flex: 50%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+}
+main #splitted #textCol h3 {
+  font-weight: normal;
+}
+main #splitted #text {
+  margin: 0 10px;
+}
+
+/*# sourceMappingURL=blogsite.css.map */
