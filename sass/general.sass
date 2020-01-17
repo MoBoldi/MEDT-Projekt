@@ -12,19 +12,19 @@ body
     background-size: cover
     background-attachment: fixed
     background-repeat: no-repeat
-    font-family: 'Roboto Slab', serif    
+    font-family: 'Segoe UI', serif    
     justify-content: center
     align-items: center
-
-    color: white
+    color: $grey
     height: 100vh
 
 header 
+    color: $grey
     padding-top: 40px
     display: flex
     justify-content: center
     align-items: centers
-    font-size: 20px
+    font-size: 1em
     /*.placeholder
         flex-grow: 1*/
     .headerSides
@@ -34,21 +34,33 @@ header
         justify-content: center
         align-items: center
         img
+            padding-left: 10px
             width: 70px
             height: 70px
+    #login, nav 
+        box-shadow: $lightShadow
+    #login
+        background-color: white
+        border: 1px solid $grey
+        font-size: 0.8em
+        text-align: center
+        p
+            flex-grow: 1
     nav 
+        background-color: white
+        border: 1px solid $grey
         margin: 0 150px 0 150px
+        padding: 5px 20px
         display: flex
         justify-content: center
         align-items: center 
-        flex-grow: 5
-        flex-basis: 0
+        width: $contentSize
         p 
             text-align: center
             flex-grow: 1
             flex-basis: 0
             a
-                color: white
+                color: inherit
                 text-decoration: none
 
 footer

@@ -11,11 +11,11 @@
     <link href="../style/index.css" rel="stylesheet" type="text/css">
 </head>
 
-<body scroll="no" style="overflow-y: hidden" id="0">
+<!--<body scroll="no" style="overflow-y: hidden" id="0">-->
+<body>
     <?php include "./header.html" ?>
-
+    <h1>earth resources</h1>
     <main>
-        <h1>earth resources</h1>
         <section id="1">
             <div class="imgCol">
                 <img src="../data/statistics.jpg" alt="Statistiken Bild">
@@ -36,7 +36,7 @@
         </section>
         <section id="3">
             <div class="imgCol">
-                <img src="../data/statistics.jpg" alt="Statistiken Bild">
+                <img src="../data/about01.jpg" alt="about">
             </div>
             <div class="textCol">
                 <h2>about us</h2>
@@ -45,11 +45,11 @@
         </section>
     </main>
     <?php include "./footer.html" ?>
-    <script>
+    <!--<script>
         document.getElementsByTagName('section')[0].style.paddingTop = "80px";
         let maxBookmarks = 4;
     </script>
-    <script src="../js/scroll.js"></script>
+    <script src="../js/scroll.js"></script>-->
 </body>
 
 </html>

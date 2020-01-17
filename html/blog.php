@@ -9,7 +9,8 @@
     <link href="../style/general.css" rel="stylesheet" type="text/css">
     <link href="../style/blog.css" rel="stylesheet" type="text/css">
 </head>
-<body scroll="no" style="overflow-y: hidden" id="0">
+<!--<body scroll="no" style="overflow-y: hidden" id="0">-->
+<body>
     <?php include "./header.html" ?>
     <main>
     <h1>Tipps & Tricks</h1>
@@ -42,7 +43,7 @@
     </main>
     <?php include "./footer.html" ?>
 
-    <script>
+    <!--<script>
         document.getElementsByTagName('section')[0].style.paddingTop = "80px";
         let maxBookmarks = 3;
 
@@ -56,6 +57,6 @@
             
         }
     </script>
-    <script src="../js/scroll.js"></script>
+    <script src="../js/scroll.js"></script>-->
 </body>
 </html>

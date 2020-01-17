@@ -3,7 +3,7 @@ html {
 }
 
 main {
-  width: 80%;
+  width: 61.25%;
   margin: auto;
 }
 main h1 {
@@ -15,20 +15,23 @@ main section {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 150px;
 }
 main section .left {
   text-align: right;
+}
+main section .left .textCol {
+  padding-right: 50px;
 }
 main section .imgCol {
   flex: 50%;
 }
 main section .imgCol img {
+  box-shadow: 0px 0px 5px 0px rgba(7, 7, 7, 0.2);
   width: 100%;
   box-sizing: border-box;
 }
 main section .textCol {
-  padding: 0px 50px 0 50px;
+  padding-left: 50px;
   flex: 50%;
 }
 main section .textCol h2 {
