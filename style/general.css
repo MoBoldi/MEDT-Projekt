@@ -18,6 +18,11 @@ main {
   padding-left: 21px;
   border: 1px solid #707070;
 }
+main h1 {
+  text-align: center;
+  font-size: 80px;
+  letter-spacing: 8px;
+}
 main section {
   display: flex;
   align-items: center;
