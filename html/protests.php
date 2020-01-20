@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
     <link href="../style/general.css" rel="stylesheet" type="text/css">
     <link href="../style/protests.css" rel="stylesheet" type="text/css">
@@ -12,7 +13,11 @@
 </head>
 <body>
     <?php include "./header.html" ?>
+<<<<<<< HEAD
     <h1>Protests</h1>
+=======
+    <h1>FFF - Proteste</h1>
+>>>>>>> c933c3563b28899559050678e65f84d709f7926a
     <main>
         <table>
             <tr>
