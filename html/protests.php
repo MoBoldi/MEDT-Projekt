@@ -12,7 +12,7 @@
 </head>
 <body>
     <?php include "./header.html" ?>
-
+    <h1>Protests</h1>
     <main>
         <table>
             <tr>
