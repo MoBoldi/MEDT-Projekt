@@ -5,7 +5,7 @@ let elements = document.getElementsByClassName('illo');
 for (let i = 0; i < elements.length; i++) {
     let illoElem = elements[i];
 
-    const illoSize = 70;
+    const illoSize = 90;
     const minWindowSize = Math.min(window.innerWidth - 20, window.innerHeight - 60);
     const zoom = Math.floor((minWindowSize / illoSize) * 0.75);
     illoElem.setAttribute('width', illoSize * zoom);
