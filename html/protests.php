@@ -13,11 +13,7 @@
 </head>
 <body>
     <?php include "./header.html" ?>
-<<<<<<< HEAD
-    <h1>Protests</h1>
-=======
     <h1>FFF - Proteste</h1>
->>>>>>> c933c3563b28899559050678e65f84d709f7926a
     <main>
         <table>
             <tr>

@@ -9,19 +9,27 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
     <link href="../style/general.css" rel="stylesheet" type="text/css">
     <link href="../style/login.css" rel="stylesheet" type="text/css">
+    <!--<script src="../js/verifyInput.js"></script>-->
+    <script>
+        console.log('test');
+        function verify (){
+    let email = document.forms['email'];
+    console.log(email);
+}
+    </script>
 </head>
 
 <body>
     <?php include "./header.html" ?>
     <h1>Login</h1>
     <div id="loginScreen">
-        <form>
+        <form method="POST" action="login.php">
             <p>Email-Adresse</p>
-            <input type="text">
+            <input type="text" title="soon" name="email" required pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$">
             <p>Passwort</p>
-            <input type="password">
+            <input type="password" title="soon" name="password" required pattern="^(?=.*[\d\W])(?=.*[a-z])(?=.*[A-Z]).{8,100}$">
             <br>
-            <input type="submit" value="Absenden" id="submit">
+            <input type="submit" value="Absenden">
         </form>
     </div>
     
