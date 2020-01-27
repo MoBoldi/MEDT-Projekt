@@ -17,13 +17,13 @@
     <div id="loginScreen">
         <form>
             <p>Benutzername</p>
-            <input type="text">
+            <input type="text" pattern="^[a-z0-9_-]{3,16}$" required>
             <p>Email-Adresse</p>
-            <input type="text">
+            <input type="text" required pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$">
             <p>Passwort</p>
-            <input type="password">
+            <input type="password" required pattern="^(?=.*[\d\W])(?=.*[a-z])(?=.*[A-Z]).{8,100}$">
             <p>Passwort wiederholen</p>
-            <input type="password">
+            <input type="password" required pattern="^(?=.*[\d\W])(?=.*[a-z])(?=.*[A-Z]).{8,100}$">
             <br>
             <input type="submit" value="Absenden" id="submit">
         </form>
