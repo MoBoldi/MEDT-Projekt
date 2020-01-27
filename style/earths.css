@@ -1,0 +1,17 @@
+main p {
+  font-size: 1.2em;
+}
+main #illos {
+  display: flex;
+}
+main #illos .container {
+  max-width: 30%;
+  overflow: hidden;
+  margin: auto;
+}
+main #illos .container .illo {
+  max-width: 100%;
+  margin: auto;
+}
+
+/*# sourceMappingURL=earths.css.map */

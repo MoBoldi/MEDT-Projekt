@@ -1,0 +1,24 @@
+.stats {
+  width: 80%;
+  margin: 25px auto;
+}
+.stats h1 {
+  color: #575757;
+  font-size: 1.2em;
+  margin: 5px 0;
+}
+.stats .bar {
+  width: 100%;
+  background-color: #e9ecef;
+  height: 15px;
+  border-radius: 6px 5px 5px 6px;
+}
+.stats .bar .filled {
+  border-radius: 5px 0px 0px 5px;
+  background-color: #745e23;
+  width: 0;
+  height: inherit;
+  margin: 0;
+}
+
+/*# sourceMappingURL=stats.css.map */
