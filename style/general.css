@@ -162,10 +162,11 @@ footer img {
   width: 50px;
   filter: invert(100%);
   padding-top: -10px;
-  transition: filter 0.3s;
+  transition: box-shadow 0.3s;
 }
 footer img:hover {
-  filter: invert(5%);
+  box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
 }
 
 #selfmadeHR {
