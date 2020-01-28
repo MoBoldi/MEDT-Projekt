@@ -5,20 +5,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>er - earth resources | home site</title>
+    <title>er - earth resources | login</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
     <link href="../style/general.css" rel="stylesheet" type="text/css">
     <link href="../style/login.css" rel="stylesheet" type="text/css">
-    <!--<script src="../js/verifyInput.js"></script>-->
-    <script>
-        console.log('test');
-        function verify (){
-    let email = document.forms['email'];
-    console.log(email);
-}
-    </script>
+
 </head>
+<?php 
+    if (isset($_POST["send"])) {
+        $eingabe = array();
+        $error = array();
+        $pattern = '/[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$/';
+        if(isset($_POST["email"]) && preg_match($pattern, $_POST["email"]) == 1){
+            $eingabe["email"] = htmlentities(trim($_POST["email"]));
+        } else {
+            $error['email'] = 'Email';
+        }
+        $pattern = '/^(?=.*[\d\W])(?=.*[a-z])(?=.*[A-Z]).{8,100}$/';
+        if(isset($_POST["password"]) && preg_match($pattern, $_POST["password"]) == 1){
+            $eingabe["password"] = htmlentities(trim($_POST["password"]));
+        } else {
+            $error['password'] = 'Passwort';
+        }
+
+        if (empty($error)) {
+        
+        } else {
+            $errors = implode(', ', $error);
+            $err = 'Es sind Fehler aufgetreten: '.$errors;
+        }
+    }
+?>
 
 <body>
     <?php include "./header.html" ?>
@@ -26,15 +44,21 @@
     <div id="loginScreen">
         <form method="POST" action="login.php">
             <p>Email-Adresse</p>
-            <input type="text" title="soon" name="email" required pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$">
+            <input type="text" title="soon" name="email" required
+                pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$"
+                <?php if(isset($eingabe["email"])) echo " value='".$eingabe["email"]."'"; ?>>
             <p>Passwort</p>
-            <input type="password" title="soon" name="password" required pattern="^(?=.*[\d\W])(?=.*[a-z])(?=.*[A-Z]).{8,100}$">
+            <input type="password" title="soon" name="password" required
+                pattern="^(?=.*[\d\W])(?=.*[a-z])(?=.*[A-Z]).{8,100}$"
+                <?php if(isset($eingabe["password"])) echo " value='".$eingabe["password"]."'"; ?>>
             <br>
-            <input type="submit" value="Absenden">
+            <input type="submit" value="Absenden" name="send">
         </form>
+        <p id="errors" style="text-align: center;">
+            <?php if(isset($err)){ echo $err; }?></p>
     </div>
-    
-    <?php include "./footer.html" ?> 
+
+    <?php include "./footer.html" ?>
 </body>
 
 </html>
