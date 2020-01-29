@@ -1,0 +1,10 @@
+table {
+  margin: auto;
+  text-align: left;
+  border-spacing: 1em;
+}
+table td:first-child, table th:first-child {
+  text-align: right;
+}
+
+/*# sourceMappingURL=numbers.css.map */

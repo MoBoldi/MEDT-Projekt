@@ -53,22 +53,7 @@
         document.getElementById('oil').style.width = '80%';
         document.getElementById('population').style.width = '60%';
         document.getElementById('wastedFood').style.width = '33%';
-        //document.getElementById('resourceContent').style.right = "00vw";
 
-        let chartsButton = document.getElementById("charts");
-        let earthButton = document.getElementById("earth");
-        let numbersButton = document.getElementById("numbers");
-        let resourceContent = document.getElementById("resourceContent");
-        let buttons = document.getElementsByClassName('test');
-        console.log(buttons);
-        for (let i = 0; i < buttons.length; i++) {
-            console.log('test');
-            buttons[i].addEventListener('click', animate);
-        }
-
-        function animate() {
-            console.log('test');
-        }
     </script>
 </body>
 
