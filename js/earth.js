@@ -8,8 +8,8 @@ for (let i = 0; i < elements.length; i++) {
     const illoSize = 90;
     const minWindowSize = Math.min(window.innerWidth - 20, window.innerHeight - 60);
     const zoom = Math.floor((minWindowSize / illoSize) * 0.75);
-    illoElem.setAttribute('width', illoSize * zoom);
-    illoElem.setAttribute('height', illoSize * zoom);
+    illoElem.setAttribute('width', illoElem.parentElement.parentElement.offsetWidth / 3);
+    illoElem.setAttribute('height', illoElem.parentElement.parentElement.offsetWidth / 3);
 
     // Zdog math variables
     const TAU = Zdog.TAU;
@@ -218,7 +218,7 @@ for (let i = 0; i < elements.length; i++) {
             y: 7,
             z: 4
         },
-        color: "#fff",
+        color: "#e6e6e6",
         closed: false,
         fill: true,
         stroke: 5,
@@ -242,7 +242,7 @@ for (let i = 0; i < elements.length; i++) {
             y: 7,
             z: 20
         },
-        color: "#fff",
+        color: "#e6e6e6",
         closed: false,
         fill: true,
         stroke: 5,
@@ -266,7 +266,7 @@ for (let i = 0; i < elements.length; i++) {
             y: 2,
             z: 4
         },
-        color: "#fff",
+        color: "#e6e6e6",
         closed: false,
         fill: true,
         stroke: 4,
@@ -300,7 +300,7 @@ for (let i = 0; i < elements.length; i++) {
             y: -2,
             z: 7
         },
-        color: "#fff",
+        color: "#e6e6e6",
         closed: false,
         fill: true,
         stroke: 2,
@@ -334,7 +334,7 @@ for (let i = 0; i < elements.length; i++) {
             y: -10,
             z: 7
         },
-        color: "#fff",
+        color: "#e6e6e6",
         closed: false,
         fill: true,
         stroke: 3,
@@ -369,7 +369,7 @@ for (let i = 0; i < elements.length; i++) {
             y: -8,
             z: -3
         },
-        color: "#A6B3DA",
+        color: "#e6e6e6",
         closed: false,
         fill: true,
         stroke: 3,
@@ -403,7 +403,7 @@ for (let i = 0; i < elements.length; i++) {
             y: 0,
             z: -8
         },
-        color: "#A6B3DA",
+        color: "#e6e6e6",
         closed: false,
         fill: true,
         stroke: 6,
@@ -437,7 +437,7 @@ for (let i = 0; i < elements.length; i++) {
             y: 15,
             z: -8
         },
-        color: "#A6B3DA",
+        color: "#e6e6e6",
         closed: false,
         fill: true,
         stroke: 3,
@@ -471,7 +471,7 @@ for (let i = 0; i < elements.length; i++) {
             y: -4,
             z: -18
         },
-        color: "#A6B3DA",
+        color: "#e6e6e6",
         fill: true,
         stroke: 8,
         addTo: head,
@@ -495,7 +495,7 @@ for (let i = 0; i < elements.length; i++) {
             y: 7,
             z: -16
         },
-        color: "#489268",
+        color: "#6FCC50",
         fill: true,
         stroke: 4,
         addTo: head,
@@ -528,7 +528,7 @@ for (let i = 0; i < elements.length; i++) {
             y: -2,
             z: -17
         },
-        color: "#489268",
+        color: "#6FCC50",
         fill: true,
         stroke: 8,
         addTo: head,
@@ -551,7 +551,7 @@ for (let i = 0; i < elements.length; i++) {
             y: -10,
             z: -10
         },
-        color: "#489268",
+        color: "#6FCC50",
         fill: true,
         stroke: 4,
         addTo: head,

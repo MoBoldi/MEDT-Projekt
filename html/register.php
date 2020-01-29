@@ -35,7 +35,14 @@
         }
 
         if (empty($error)) {
-            
+            $filename = "log.csv";
+            $mode = "a";
+            $handle = fopen($filename, $mode);
+            $logEntry = "\nregistration;".date('Y-m-d').";".$eingabe['user'].";".$eingabe['email'].";".$eingabe['password'];
+            fwrite($handle, $logEntry);
+            fclose($handle);
+            header("Location: index.php");
+            die();
         } else {
             $errors = implode(', ', $error);
             $err = 'Es sind Fehler aufgetreten: '.$errors;
