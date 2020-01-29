@@ -34,6 +34,12 @@
     </main>
     
     <?php include "./footer.html" ?> 
+    <script>
+        let il = document.getElementsByClassName('illo');
+        for (let i = 0; i < il.length; i++){
+            il[i].style.height = il[i].style.width;
+        }
+    </script>
     <script src="../js/earth.js"></script>
 
 </body>
