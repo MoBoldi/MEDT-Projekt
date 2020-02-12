@@ -15,10 +15,55 @@
 <body>
     
     <?php include "./header.html" ?>
-    <h1>Statistik</h1>
+    <h1>Account</h1>
 
     <main>
-        
+        <div id="account">
+            <img id="logo" alt="your logo" src="../data/profile.png" width="100px" height="100px">
+            <h3>Benutzername</h3>
+            <p>email@adresse.com</p>
+        </div>
+        <div id="userEntrys">
+            <h3>Eigene Beiträge</h3>
+            <div id="entrys">
+                <div class="entry"></div>
+                <div class="entry"></div>
+                <div class="entry"></div>
+                <div class="entry"></div>
+            </div>
+        </div>
+        <div id="accountData">
+            <div>
+                <h3>Profilbild</h3>
+                <button>Ändern</button>
+                <hr>
+            </div>
+            <div>
+                <h3>Benutzername</h3>
+                <button>Ändern</button>
+                <hr>
+            </div>
+            <div>
+                <h3>Email-Adresse</h3>
+                <button>Ändern</button>
+                <hr>
+            </div>
+            <div>
+                <h3>Passwort</h3>
+                <button>Ändern</button>
+                <hr>
+            </div>
+            <div>
+                <h3>Author werden</h3>
+                <button>Beantragen</button>
+                <hr>
+            </div>
+            <div>
+                <h3>Konto löschen</h3>
+                <button>Löschen</button>
+                <hr>
+            </div>
+        </div>
     </main>
 
     <?php include "./footer.html" ?>
