@@ -16,7 +16,9 @@
 
 <body>
     <?php include "./header.html" ?>
+    <div class='banner'>
     <h1>Ökologischer Fußabdruck</h1>
+    </div>
     <main>
         <p>Würden alle Menschen heute so leben wie wir in Europa, bräuchten wir 3 Planeten von der Qualität der Erde. Würden alle gar so leben wollen wie die US-Ameri­ka­ner­Innen, dann bräuchten wir 5 Planeten!</p>
         <p>Da allgemein bekannt sein dürfte, dass uns nur ein einziger Planet, die Erde, zur Verfügung steht, und diese sicher nicht wachsen wird, ergibt sich daraus die größte Ungerechtigkeit in der Geschichte der Menschheit. Wir EuropäerInnen nehmen Menschen aus ärmeren Ländern Platz weg, stehen ihnen regelrecht auf den Füssen! </p>

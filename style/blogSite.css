@@ -1,5 +1,5 @@
 main {
-  width: 61.25%;
+  width: 80%;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -11,11 +11,11 @@ main h1 {
 main #splitted {
   display: flex;
 }
-main #splitted #banner {
+main #splitted #image {
   flex: 50%;
   margin-top: 30px;
 }
-main #splitted #banner img {
+main #splitted #image img {
   width: 100%;
   padding: 0 30px 30px 0;
   box-sizing: border-box;

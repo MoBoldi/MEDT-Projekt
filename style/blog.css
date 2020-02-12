@@ -1,52 +1,10 @@
-html {
-  scroll-behavior: smooth;
+.banner {
+  margin-top: 45px;
+  height: 60vh;
 }
 
-h1 {
-  text-align: center;
-  font-size: 3.5em;
-  color: white;
-  letter-spacing: 8px;
-}
-
-main {
-  width: 61.25%;
-  background-color: white;
-  margin: auto;
-  padding: 10px 20px;
-  border: 1px solid #575757;
-  box-shadow: 0px 0px 5px 0px rgba(7, 7, 7, 0.2);
-}
-main h1 {
-  text-align: center;
-  font-size: 80px;
-  letter-spacing: 8px;
-}
-main section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 40px 0;
-}
-main section .imgCol {
-  flex: 50%;
-}
-main section .imgCol img {
-  box-shadow: 0px 0px 5px 0px rgba(7, 7, 7, 0.2);
-  width: 100%;
-  box-sizing: border-box;
-}
-main section .textCol {
-  padding-left: 50px;
-  flex: 50%;
-}
-main section .textCol h2 {
-  font-size: 30px;
-  letter-spacing: 7px;
-}
-main section .left {
-  text-align: right;
-  padding-right: 50px;
+main p {
+  margin-bottom: 30px;
 }
 
 section {

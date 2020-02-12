@@ -5,29 +5,23 @@
 body, html 
     margin: 0
 body 
-    //background-color: #A3B2A3
-    //background-image: linear-gradient(to bottom right, #0462aa, #01345b)
-    //background-color: black
-    background-image: url("../test/test02.jpg")
-    background-size: cover
-    background-attachment: fixed
-    background-repeat: no-repeat
+    background-color: white
     font-family: 'Segoe UI', serif    
     justify-content: center
     align-items: center
     color: $grey
     height: 100vh
-    padding: 10px
 a 
     color: $grey 
     text-decoration: none
 header 
+    margin: 0 30px
     color: $grey
     padding: 40px 0 0 0 
     display: flex
     justify-content: center
     align-items: centers
-    font-size: 1em
+    font-size: 1.4em
     .headerSides
         flex-grow: 2
         flex-basis: 0
@@ -37,12 +31,9 @@ header
         img
             width: 70px
             height: 70px
-    #login, nav 
-        box-shadow: $lightShadow
+            filter: invert(60%)
     #login
-        background-color: white
-        border: 1px solid $grey
-        font-size: 0.8em
+        font-size: 1em
         text-align: center
         box-sizing: border-box
         p
@@ -55,18 +46,20 @@ header
                 &:hover
                     font-weight: bold
     nav 
-        background-color: white
-        border: 1px solid $grey
         margin: 0 150px 0 150px
         padding: 5px 20px
         display: flex
         justify-content: center
         align-items: center 
-        width: $contentSize
+        width: 61%
         box-sizing: content-box
         button 
             font-weight: normal
             transition: font-weight 0.2s
+            span 
+                font-size: 1.4em
+            i 
+                margin-top: 5px
             &:hover
                 font-weight: bold
         div 
@@ -80,6 +73,51 @@ header
                 transition: font-weight 0.2s
                 &:hover
                     font-weight: bold
+.banner 
+    display: flex
+    align-items: center
+    justify-content: center
+    background-image: url(../data/background.jpg)
+    background-attachment: fixed
+    background-size: cover
+    margin: 25px 0
+    height: 40vh
+    width: 100%
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.5)
+    h1
+        text-align: center
+        font-size: 50px
+        letter-spacing: 8px
+        color: white
+        a 
+            color: white
+main
+    width: $contentSize
+    margin: auto
+    padding: 10px 20px
+    section
+        display: flex
+        align-items: center
+        justify-content: center
+        margin: 40px 0
+        .imgCol
+            flex: 50%
+            //box-shadow: 0 0 300px 1px black
+            img
+                box-shadow: $lightShadow
+                width: 100%
+                box-sizing: border-box
+                //padding: 0px 50px 0 50px
+        .textCol
+            padding-left: 50px
+            flex: 50%
+            h2 
+                font-size: 30px
+                letter-spacing: 7px
+        .left
+            text-align: right 
+            padding-right: 50px
+
 
 footer
     height: 150px
@@ -94,7 +132,6 @@ footer
     img 
         margin: 0 20px 0 20px
         width: 50px
-        filter: invert(100%)
         padding-top: -10px
         transition: box-shadow 0.3s
         &:hover

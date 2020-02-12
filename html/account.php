@@ -15,8 +15,9 @@
 <body>
     
     <?php include "./header.html" ?>
-    <h1>Account</h1>
-
+    <div class="banner">
+        <h1>Account</h1>
+    </div>
     <main>
         <div id="account">
             <img id="logo" alt="your logo" src="../data/profile.png" width="100px" height="100px">
