@@ -14,8 +14,9 @@
 
 <body>
     <?php include "./header.html" ?>
+    <div class="banner">
     <h1>Numbers</h1>
-
+    </div>
     <main>
         <table>
             <tr>

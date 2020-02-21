@@ -47,7 +47,9 @@
 
 <body>
     <?php include "./header.html" ?>
+    <div class="banner">
     <h1>Login</h1>
+    </div>
     <div id="loginScreen">
         <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
             <p>Email-Adresse</p>

@@ -14,11 +14,13 @@
 
 <body>
     <?php include "header.html" ?>
+    <div id="banner">
     <h1>3 Dinge über Kreuzfahrten</h1>
+    </div>
     <main>
         
         <div id="splitted">
-            <div id="banner">
+            <div class="image">
                 <img src="../data/kreuzfahrt.jpg" alt="Kreuzfahrtschiff">
             </div>
             <div id="textCol">

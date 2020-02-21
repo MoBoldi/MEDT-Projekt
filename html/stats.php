@@ -14,8 +14,9 @@
 
 <body>
     <?php include "./header.html" ?>
+    <div class="banner" style="background-image:url(../data/statistics.jpg)">
     <h1>Statistik</h1>
-
+    </div>
     <main>
         <div class="stats">
             <h1 class="caption">

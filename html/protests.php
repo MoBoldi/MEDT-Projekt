@@ -13,7 +13,9 @@
 </head>
 <body>
     <?php include "./header.html" ?>
+    <div class="banner" style="background-image: url(../data/climate.jpg)">
     <h1>FFF - Proteste</h1>
+    </div>
     <main>
         <table>
             <tr>

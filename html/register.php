@@ -52,7 +52,9 @@
 <body>
 
     <?php include "./header.html" ?>
+    <div class="banner">
     <h1>Register</h1>
+    </div>
     <div id="loginScreen">
         <form action="<?php echo htmlentities($_SERVER["PHP_SELF"]); ?>" method="post">
             <p>Benutzername</p>
