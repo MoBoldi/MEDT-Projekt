@@ -1,5 +1,6 @@
 #loginScreen {
   width: 35%;
+  margin: auto;
 }
 #loginScreen form {
   width: 50%;

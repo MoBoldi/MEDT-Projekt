@@ -1,3 +1,54 @@
+main {
+  width: 60%;
+}
 
+#account {
+  display: flex;
+  margin-bottom: 40px;
+}
+#account div {
+  margin-left: 20px;
+}
+
+#userEntrys {
+  margin-bottom: 40px;
+  max-width: 100%;
+  overflow: hidden;
+}
+#userEntrys #entrys {
+  display: flex;
+  flex-wrap: wrap;
+}
+#userEntrys #entrys .entry {
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22%;
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px 0px rgba(7, 7, 7, 0.46);
+  min-height: 300px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#userEntrys #entrys .entry h3 {
+  color: white;
+  letter-spacing: 1.5px;
+  text-align: center;
+}
+
+#accountData div {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+#accountData div button {
+  height: 30px;
+  width: 100px;
+}
+#accountData div #delete {
+  color: red;
+}
 
 /*# sourceMappingURL=account.css.map */

@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["../sass/index.sass","../sass/protests.sass","../sass/_variable.sass"],"names":[],"mappings":"AAGA;EACI;EACA;;;AAGA;EACI;;;ACPR;EACI;EACA,OCJU;EDKV;EACA;EACA;;AAEI;EACI","file":"protests.css"}
+{"version":3,"sourceRoot":"","sources":["../sass/protests.sass","../sass/_variable.sass"],"names":[],"mappings":"AACA;EACI;EACA,OCHU;EDIV;EACA;EACA;;AAEI;EACI","file":"protests.css"}
