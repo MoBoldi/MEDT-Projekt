@@ -21,6 +21,13 @@
         <div><a href="blog.php">blog</a></div>
     </nav>
     <div class="headerSides" id="login">
-        <p><a href="login.php">Login</a></p>
+        <?php 
+            session_start();
+            if (isset($_SESSION['eingeloggt'])){
+                echo "<p><a href='account.php'>Profil</a></p>";
+            } else {
+                echo "<p><a href='login.php'>Login</a></p>";
+            }
+        ?>
     </div>
 </header>

@@ -1,6 +1,4 @@
-<<<<<<< HEAD
  
-=======
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,7 +15,7 @@
 
 <body>
     
-    <?php include "./header.html" ?>
+    <?php include "./header.php" ?>
     <div class="banner">
         <h1>Account</h1>
     </div>
@@ -75,4 +73,3 @@
 </body>
 
 </html>
->>>>>>> d7e6130c9e3d9a36586c6f137f3c2bf3be9ed591

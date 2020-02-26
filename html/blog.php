@@ -12,7 +12,7 @@
 </head>
 <!--<body scroll="no" style="overflow-y: hidden" id="0">-->
 <body>
-    <?php include "./header.html" ?>
+    <?php include "./header.php" ?>
     <div class="banner">
     <h1>Tipps für ein besseres Klima</h1>
     </div>

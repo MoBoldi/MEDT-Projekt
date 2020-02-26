@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <?php include "./header.html" ?>
+    <?php include "./header.php" ?>
     <div class="banner">
     <h1>Numbers</h1>
     </div>

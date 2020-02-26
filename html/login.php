@@ -30,14 +30,19 @@
         }
 
         if (empty($error)) {
+            session_start();
+            if (!isset($_SESSION['email'])){
+                $_SESSION['email'] = $eingabe['email'];
+                $_SESSION['eingeloggt'] = true;
+            }
             $filename = "log.csv";
             $mode = "a";
             $handle = fopen($filename, $mode);
             $logEntry = "\nlogin;".date('Y-m-d').";-;".$eingabe['email'].";".$eingabe['password'];
             fwrite($handle, $logEntry);
             fclose($handle);
-            header("Location: index.php");
-            die();
+            //header("Location: index.php");
+            //die();
         } else {
             $errors = implode(', ', $error);
             $err = 'Es sind Fehler aufgetreten: '.$errors;
@@ -46,7 +51,7 @@
 ?>
 
 <body>
-    <?php include "./header.html" ?>
+    <?php include "./header.php" ?>
     <div class="banner">
     <h1>Login</h1>
     </div>
@@ -63,11 +68,23 @@
             <br>
             <input type="submit" value="Absenden" name="send">
         </form>
+        <p>Noch kein Account?<a href="register.php">Hier registrieren!</a></p>
         <p id="errors" style="text-align: center;">
             <?php if(isset($err)){ echo $err; }?></p>
     </div>
-
+    <div id="loggedIn">
+        <p>You are already logged in.</p>
+    </div>
     <?php include "./footer.html" ?>
+    
+    <script>
+        let loginScreen = document.getElementById('loginScreen');
+        let loggedIn = document.getElementById('loggedIn');
+        if (<?php echo isset($_SESSION['eingeloggt']);?>){
+            loginScreen.style.display = 'none';
+            loggedIn.style.display = 'block';
+        }
+    </script>
 </body>
 
 </html>

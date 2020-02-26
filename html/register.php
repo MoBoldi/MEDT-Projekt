@@ -51,7 +51,7 @@
 ?>
 <body>
 
-    <?php include "./header.html" ?>
+    <?php include "./header.php" ?>
     <div class="banner">
     <h1>Register</h1>
     </div>

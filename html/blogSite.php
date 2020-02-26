@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <?php include "header.html" ?>
+    <?php include "header.php" ?>
     <div id="banner">
     <h1>3 Dinge über Kreuzfahrten</h1>
     </div>

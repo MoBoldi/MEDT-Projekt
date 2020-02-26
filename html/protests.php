@@ -12,7 +12,7 @@
     
 </head>
 <body>
-    <?php include "./header.html" ?>
+    <?php include "./header.php" ?>
     <div class="banner" style="background-image: url(../data/climate.jpg)">
     <h1>FFF - Proteste</h1>
     </div>

@@ -15,7 +15,7 @@
 
 <!--<body scroll="no" style="overflow-y: hidden" id="0">-->
 <body>
-    <?php include "./header.html" ?>
+    <?php include "./header.php" ?>
         <div class="banner" style="background-image: url(../data/statistics.jpg)">
             <h1><a href="stats.php">resources</a></h1>
         </div>

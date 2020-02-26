@@ -18,4 +18,8 @@
   color: #575757;
 }
 
+#loggedIn {
+  display: none;
+}
+
 /*# sourceMappingURL=register.css.map */
