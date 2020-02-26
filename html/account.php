@@ -1,4 +1,3 @@
- 
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,49 +21,59 @@
     <main>
         <div id="account">
             <img id="logo" alt="your logo" src="../data/profile.png" width="100px" height="100px">
+            <div>
             <h3>Benutzername</h3>
             <p>email@adresse.com</p>
+            </div>
         </div>
         <div id="userEntrys">
             <h3>Eigene Beiträge</h3>
             <div id="entrys">
-                <div class="entry"></div>
-                <div class="entry"></div>
-                <div class="entry"></div>
-                <div class="entry"></div>
+                <div class="entry" style="background-image:url(../data/kreuzfahrt.jpg)">
+                    <h3>3 Dinge über Kreuzfahrten</h3>
+                </div>
+                <div class="entry" style="background-image:url(../data/fleisch.jpg)">
+                    <h3>Fleischkonsum, Umwelt und Klima</h3>
+                </div>
+                <div class="entry" style="background-image:url(../data/kreuzfahrt.jpg)">
+                    <h3>Platzhalter</h3>
+                </div>
+                <div class="entry" style="background-image:url(../data/fleisch.jpg)">
+                    <h3>Platzhalter</h3>
+                </div>
             </div>
         </div>
         <div id="accountData">
             <div>
                 <h3>Profilbild</h3>
                 <button>Ändern</button>
-                <hr>
             </div>
+            <hr>
             <div>
                 <h3>Benutzername</h3>
                 <button>Ändern</button>
-                <hr>
             </div>
+            <hr>
             <div>
                 <h3>Email-Adresse</h3>
                 <button>Ändern</button>
-                <hr>
             </div>
+            <hr>
             <div>
                 <h3>Passwort</h3>
                 <button>Ändern</button>
-                <hr>
             </div>
+            <hr>
             <div>
                 <h3>Author werden</h3>
                 <button>Beantragen</button>
-                <hr>
             </div>
+            <hr>
             <div>
                 <h3>Konto löschen</h3>
-                <button>Löschen</button>
-                <hr>
+                <button id="delete">Löschen</button>
             </div>
+            <hr>
         </div>
     </main>
 
