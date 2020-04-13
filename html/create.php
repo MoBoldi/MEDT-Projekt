@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,82 +9,35 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
     <link href="../style/general.css" rel="stylesheet" type="text/css">
     <link href="../style/create.css" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 
 <body>
     <?php include "./header.php" ?>
     <div class="banner" style="background-image:url(../data/statistics.jpg)">
-        <h1 contenteditable="true">Titel</h1>
+        <h1 id="Titel" contenteditable="true"><?php 
+            include "db_select_entry.php";
+            echo $titel;
+        ?></h1>
     </div>
     <main>
         <div id="editable">
-        <p contenteditable="true">
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
-            Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,
-            ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo,
-            fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae,
-            justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper
-            nisi. Aenean vulputate eleifend tellus. Unterüberschrift Aenean leo ligula, porttitor eu, consequat vitae,
-            eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla
-            ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur
-            ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus,
-            sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus
-            pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Unterüberschrift Donec vitae
-            sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt.
-            Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum
-            sodales, augue velit cursus nunc, quis gravida magna mi a libero. Fusce vulputate eleifend sapien.
-            Vestibulum purus quam,
-        </p>
-        <h2 contenteditable="true">Überschrift</h2>
-        <p contenteditable="true">
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
-            Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,
-            ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo,
-            fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae,
-            justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper
-            nisi. Aenean vulputate eleifend tellus. Unterüberschrift Aenean leo ligula, porttitor eu, consequat vitae,
-            eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla
-            ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur
-            ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus,
-            sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus
-            pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Unterüberschrift Donec vitae
-            sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt.
-            Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum
-            sodales, augue velit cursus nunc, quis gravida magna mi a libero. Fusce vulputate eleifend sapien.
-            Vestibulum purus quam,
-        </p>
-        <h3 contenteditable="true">Unterüberschrift</h3>
-        <p contenteditable="true">
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
-            Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,
-            ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo,
-            fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae,
-            justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper
-            nisi. Aenean vulputate eleifend tellus. Unterüberschrift Aenean leo ligula, porttitor eu, consequat vitae,
-            eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla
-            ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur
-            ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus,
-            sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus
-            pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Unterüberschrift Donec vitae
-            sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt.
-            Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum
-            sodales, augue velit cursus nunc, quis gravida magna mi a libero. Fusce vulputate eleifend sapien.
-            Vestibulum purus quam,
-        </p>
+            <?php echo $text ?>
         </div>
         <button id="deleteBtn">Löschen</button>
         <button id="addBtn">Einfügen</button>
         <button id="saveBtn">Speichern</button>
         <button id="publishBtn">Veröffentlichen</button>
         <button id="cancelBtn">Cancel</button>
+        <div id="test"></div>
     </main>
 
     <div id="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
             <p class="addModal">Vor welchem Block soll der Neue hinzugefügt werden?</p>
-            <p class="deleteModal">Welcher Block soll gelöscht werden? (Überschriften werden auch als Block gezählt.)
-            </p>
+            <p class="deleteModal">Welcher Block soll gelöscht werden? (Überschriften werden auch als Block gezählt.)</p>
+            <p class="publishModal">Der Beitrag wird bald von einem Mitarbeiter überprüft und dann endgültig veröffentlicht. Wenn sie den Beitrag erneut Speichern, dann wird dieser wieder zu einem Entwurf und sie müssen erneut auf "Veröffentlichen" klicken.</p>
             <select id="bloecke"></select>
             <select class="addModal" id="blockType">
                 <option>Textblock</option>
@@ -97,6 +49,7 @@
             <button class="deleteModal" id="deleteBlockBtn">Wirklich löschen?</button>
         </div>
     </div>
+
     <?php include "./footer.html" ?>
 
     <script>
@@ -114,12 +67,29 @@
         let editable = document.getElementById('editable');
         let blockType = document.getElementById('blockType');
         let end = document.getElementById('addEnd');
-        end.addEventListener('click', ()=>{
+        cancelBtn.addEventListener('click', () => {
+            save(2);
+            window.history.back();
+        });
+        end.addEventListener('click', () => {
             editable.appendChild(addElement());
+        });
+        publishBtn.addEventListener('click', () => {
+            save(1);
+            hideElements('addModal', 'deleteModal', 'publishModal');
+            bloecke.style.display = 'none';
+            modal.style.display = "block";
+        });
+        deleteBtn.addEventListener('click', () => {
+            getBloecke();
+            hideElements('addModal', 'publishModal', 'deleteModal');
+            bloecke.style.display = 'inline-block';
+            modal.style.display = "block";
         });
         addBtn.addEventListener('click', () => {
             getBloecke();
-            hideElements('deleteModal', 'addModal');
+            hideElements('deleteModal', 'publishModal', 'addModal');
+            bloecke.style.display = 'inline-block';
             modal.style.display = "block";
         });
 
@@ -132,28 +102,50 @@
             editable.insertBefore(addElement(), editable.children[(bloecke.selectedOptions[0].innerHTML) - 1]);
         });
 
-        function addElement(){
+        saveBtn.addEventListener('click', () => {
+            save(2);
+            
+        })
+
+        function addElement() {
             blockType = document.getElementById('blockType');
-            switch (blockType.value){
-                case "Textblock": 
+            switch (blockType.value) {
+                case "Textblock":
                     let p = document.createElement('p');
-                    let text = document.createTextNode('Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo,fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae,justo.');
+                    let text = document.createTextNode(
+                        'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo,fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae,justo.'
+                    );
                     p.append(text);
                     p.setAttribute('contenteditable', 'true');
                     return p;
-                case "Überschrift": 
+                case "Überschrift":
                     let h2 = document.createElement('h2');
                     let ueberschrift = document.createTextNode('Überschrift');
                     h2.setAttribute('contenteditable', 'true');
                     h2.append(ueberschrift);
                     return h2;
-                case "Unterüberschrift": 
+                case "Unterüberschrift":
                     let h3 = document.createElement('h3');
                     let unterueberschrift = document.createTextNode('Unterüberschrift');
                     h3.setAttribute('contenteditable', 'true');
                     h3.append(unterueberschrift);
                     return h3;
             }
+        }
+
+        function save(status) {
+            let text = editable.innerHTML;
+            text = text.replace(/contenteditable="true"/g, 'contenteditable="false"');
+            let titel = document.getElementById('Titel').innerHTML;
+            let xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function(){
+                if (this.readyState == 4 && this.status == 200){
+                    document.getElementById('test').innerHTML = this.responseText;
+                }
+            };
+            xhttp.open("POST", 'db_insert_blog.php', true);
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.send(`titel=${titel}&text=${text}&status=${status}`);
         }
 
         function getBloecke() {
@@ -164,11 +156,7 @@
             }
             bloecke.value = bloecke.lastChild.innerHTML;
         }
-        deleteBtn.addEventListener('click', () => {
-            getBloecke();
-            hideElements('addModal', 'deleteModal');
-            modal.style.display = "block";
-        });
+        
         span.addEventListener('click', () => {
             modal.style.display = "none";
         });
@@ -178,18 +166,22 @@
             }
         });
 
-        function hideElements(hide, show) {
-            let toHide = document.getElementsByClassName(hide);
+        function hideElements(hide1, hide2, show) {
+            let toHide1 = document.getElementsByClassName(hide1);
+            let toHide2 = document.getElementsByClassName(hide2);
             let toShow = document.getElementsByClassName(show);
             let i;
-            for (i = 0; i < toHide.length; i++) {
-                toHide[i].style.display = "none";
+            for (i = 0; i < toHide1.length; i++) {
+                toHide1[i].style.display = "none";
+            }
+            for (i = 0; i < toHide2.length; i++){
+                toHide2[i].style.display = "none";
             }
             for (i = 0; i < toShow.length; i++) {
                 toShow[i].style.display = "block";
                 if (i > 0) {
                     toShow[i].style.display = "inline-block";
-                } 
+                }
             }
         }
     </script>

@@ -26,8 +26,12 @@
             <p>email@adresse.com</p>
             </div>
         </div>
-        <div id="userEntrys">
-            <h3>Eigene Beiträge</h3>
+        
+        <div class="accountData">
+                <h3>Eigene Beiträge</h3>
+                <button onclick="document.location.href='create.php';">Neu</button>
+            </div>
+            <div id="userEntrys">
             <div id="entrys">
                 <div class="entry" style="background-image:url(../data/kreuzfahrt.jpg)">
                     <h3>3 Dinge über Kreuzfahrten</h3>
@@ -43,38 +47,36 @@
                 </div>
             </div>
         </div>
-        <div id="accountData">
-            <div>
+            <div class="accountData">
                 <h3>Profilbild</h3>
                 <button>Ändern</button>
             </div>
             <hr>
-            <div>
+            <div class="accountData">
                 <h3>Benutzername</h3>
                 <button>Ändern</button>
             </div>
             <hr>
-            <div>
+            <div class="accountData">
                 <h3>Email-Adresse</h3>
                 <button>Ändern</button>
             </div>
             <hr>
-            <div>
+            <div class="accountData">
                 <h3>Passwort</h3>
                 <button>Ändern</button>
             </div>
             <hr>
-            <div>
+            <div class="accountData">
                 <h3>Author werden</h3>
                 <button>Beantragen</button>
             </div>
             <hr>
-            <div>
+            <div class="accountData">
                 <h3>Konto löschen</h3>
                 <button id="delete">Löschen</button>
             </div>
             <hr>
-        </div>
     </main>
 
     <?php include "./footer.html" ?>

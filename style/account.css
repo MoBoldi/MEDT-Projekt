@@ -38,16 +38,16 @@ main {
   text-align: center;
 }
 
-#accountData div {
+.accountData {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
 }
-#accountData div button {
+.accountData button {
   height: 30px;
   width: 100px;
 }
-#accountData div #delete {
+.accountData #delete {
   color: red;
 }
 

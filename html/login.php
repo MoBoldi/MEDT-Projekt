@@ -41,8 +41,8 @@
             $logEntry = "\nlogin;".date('Y-m-d').";-;".$eingabe['email'].";".$eingabe['password'];
             fwrite($handle, $logEntry);
             fclose($handle);
-            //header("Location: index.php");
-            //die();
+            header("Location: index.php");
+            die();
         } else {
             $errors = implode(', ', $error);
             $err = 'Es sind Fehler aufgetreten: '.$errors;
