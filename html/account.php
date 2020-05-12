@@ -77,10 +77,27 @@
                 <button id="delete">Löschen</button>
             </div>
             <hr>
+            <div class="accountData">
+                <h3>Abmelden</h3>
+                <button id="logoff">Abmelden</button>
+            </div>
+            <hr>
     </main>
 
     <?php include "./footer.html" ?>
-
+    <script>
+        let logoffBtn = document.getElementById('logoff');
+        logoffBtn.addEventListener('click', ()=>{
+            let xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    window.location.href = '/medt-projekt/html/';
+                }
+            }
+            xhttp.open('POST', 'logoff.php', true);
+            xhttp.send();
+        });
+    </script>
 </body>
 
 </html>

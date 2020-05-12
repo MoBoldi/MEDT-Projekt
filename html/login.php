@@ -30,19 +30,39 @@
         }
 
         if (empty($error)) {
-            session_start();
-            if (!isset($_SESSION['email'])){
-                $_SESSION['email'] = $eingabe['email'];
-                $_SESSION['eingeloggt'] = true;
+            include 'db_connect.php';
+
+            $stmt = "SELECT status from login_user where email='" . $eingabe["email"]."'";
+            $result = $conn->query($stmt);
+            if ($result->fetch_row()[0] != 0){
+                $error['authentication'] = 'Authentication';
             }
-            $filename = "log.csv";
-            $mode = "a";
-            $handle = fopen($filename, $mode);
-            $logEntry = "\nlogin;".date('Y-m-d').";-;".$eingabe['email'].";".$eingabe['password'];
-            fwrite($handle, $logEntry);
-            fclose($handle);
-            header("Location: index.php");
-            die();
+
+            include 'db_disconnect.php';
+        }
+
+        if (empty($error)) {
+            session_start();
+            include 'db_connect.php';
+            $passwort_hash = password_hash($eingabe['password'], PASSWORD_DEFAULT);
+            $result = $conn->query("SELECT * FROM login_user WHERE email = '".$eingabe["email"]."' AND password = '" . $passwort_hash . "'");
+            //$user = $result->fetch_all();
+                
+            //Überprüfung des Passworts
+            if ($result !== false) {
+                $_SESSION['user'] = $eingabe['email'];
+                header("Location: index.php");
+                die();
+            } else {
+                $error['Datenbank'] = "E-Mail oder Passwort war ungültig<br>";
+            }
+
+            
+
+            include 'db_disconnect.php';
+
+            
+            
         } else {
             $errors = implode(', ', $error);
             $err = 'Es sind Fehler aufgetreten: '.$errors;
@@ -68,7 +88,7 @@
             <br>
             <input type="submit" value="Absenden" name="send">
         </form>
-        <p>Noch kein Account?<a href="register.php">Hier registrieren!</a></p>
+        <p style="text-align: center">Noch kein Account?<a href="register.php">Hier registrieren!</a></p>
         <p id="errors" style="text-align: center;">
             <?php if(isset($err)){ echo $err; }?></p>
     </div>

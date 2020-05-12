@@ -23,7 +23,7 @@
     <div class="headerSides" id="login">
         <?php 
             session_start();
-            if (isset($_SESSION['eingeloggt'])){
+            if (isset($_SESSION['user'])){
                 echo "<p><a href='account.php'>Profil</a></p>";
             } else {
                 echo "<p><a href='login.php'>Login</a></p>";
