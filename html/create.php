@@ -79,6 +79,7 @@
             hideElements('addModal', 'deleteModal', 'publishModal');
             bloecke.style.display = 'none';
             modal.style.display = "block";
+            notifyAdmin();
         });
         deleteBtn.addEventListener('click', () => {
             getBloecke();
@@ -140,12 +141,20 @@
             let xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function(){
                 if (this.readyState == 4 && this.status == 200){
+//Test bei Speichern 
                     document.getElementById('test').innerHTML = this.responseText;
                 }
             };
             xhttp.open("POST", 'db_insert_blog.php', true);
             xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             xhttp.send(`titel=${titel}&text=${text}&status=${status}`);
+        }
+
+        //Admin benachrichtigen, dass der User etwas veröffentlicht hat -> Admin muss diesen Beitrag online stellen. 
+        function notifyAdmin(){
+            let titel = "Blog Published by " . $_SESSION['user'];
+            let text = "Beitrag überprüfen und in Datenbank frei geben. \nID: ". $_SESSION['Blog_ID'];
+            require('notifyAdmin.php');
         }
 
         function getBloecke() {

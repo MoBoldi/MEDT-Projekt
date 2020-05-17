@@ -34,7 +34,7 @@
 
             $stmt = "SELECT status from login_user where email='" . $eingabe["email"]."'";
             $result = $conn->query($stmt);
-            if ($result->fetch_row()[0] != 0){
+            if ($result->fetch_row()[0] == 1){
                 $error['authentication'] = 'Authentication';
             }
 
@@ -50,6 +50,7 @@
                 
             //Überprüfung des Passworts
             if ($result !== false) {
+                //Mail-Adresse des Users in Session speichern 
                 $_SESSION['user'] = $eingabe['email'];
                 header("Location: index.php");
                 die();
