@@ -22,54 +22,72 @@
         <div id="account">
             <img id="logo" alt="your logo" src="../data/profile.png" width="100px" height="100px">
             <div>
-            <h3>Benutzername</h3>
-            <p>email@adresse.com</p>
+            <h3><?php
+            //Username und Mail ausgeben in Account.php
+                require('db_connect.php');
+                //username ausgeben
+                $result = $conn->query("SELECT username FROM login_user where email='" . $_SESSION["user"] . "'");
+                
+
+                if ($result->num_rows > 0){
+                    echo $result->fetch_row()[0];
+                }
+                require('db_disconnect.php');
+            ?></h3>
+            <p><?php echo $_SESSION['user'];?></p>
             </div>
         </div>
+        <?php
+        //Blog-Beiträge des Users auflisten 
+            require('db_connect.php');
+            $result = $conn->query("select status, id from login_user where email = '". $_SESSION['user'] ."'");  
+            $result = $result->fetch_assoc();
+            //check ob User Admin oder Autor
+            if ($result['status'] == 3 || $result['status'] == 2){
+                $result = $conn->query("SELECT titel, Blog_ID FROM blog WHERE Autor = " . $result['id']);
+                $rows = $result->num_rows;
+                $result = $result->fetch_all();
+                //Blog-Beiträge ausgeben
+                echo '
+                <div class="accountData">
+                    <h3>Eigene Beiträge</h3>
+                    <button id="neuBtn">Neu</button>
+                </div>
+                    <div id="userEntrys">
+                    <div id="entrys">';
+                for ($i = 0; $i < $rows; $i++){
+                    echo '<div class="entry" style="background-image:url(../data/kreuzfahrt.jpg)">
+                    <a style="all:unset" href="blogSite.php?id='. $result[$i][1] . '"><h3>'. $result[$i][0] . '</h3>
+                    </a></div>';
+                }
+                echo "</div></div>";
+            }
+            require('db_disconnect.php');
+        ?>
         
-        <div class="accountData">
-                <h3>Eigene Beiträge</h3>
-                <button onclick="document.location.href='create.php';">Neu</button>
-            </div>
-            <div id="userEntrys">
-            <div id="entrys">
-                <div class="entry" style="background-image:url(../data/kreuzfahrt.jpg)">
-                    <h3>3 Dinge über Kreuzfahrten</h3>
-                </div>
-                <div class="entry" style="background-image:url(../data/fleisch.jpg)">
-                    <h3>Fleischkonsum, Umwelt und Klima</h3>
-                </div>
-                <div class="entry" style="background-image:url(../data/kreuzfahrt.jpg)">
-                    <h3>Platzhalter</h3>
-                </div>
-                <div class="entry" style="background-image:url(../data/fleisch.jpg)">
-                    <h3>Platzhalter</h3>
-                </div>
-            </div>
-        </div>
             <div class="accountData">
                 <h3>Profilbild</h3>
-                <button>Ändern</button>
+                <button id="chgProfilbild">Ändern</button>
             </div>
             <hr>
             <div class="accountData">
                 <h3>Benutzername</h3>
-                <button>Ändern</button>
+                <button id="chgBenutzername">Ändern</button>
             </div>
             <hr>
             <div class="accountData">
                 <h3>Email-Adresse</h3>
-                <button>Ändern</button>
+                <button id="chgEmail">Ändern</button>
             </div>
             <hr>
             <div class="accountData">
                 <h3>Passwort</h3>
-                <button>Ändern</button>
+                <button id="chgPasswort">Ändern</button>
             </div>
             <hr>
             <div class="accountData">
                 <h3>Author werden</h3>
-                <button>Beantragen</button>
+                <button id="becomeAutor">Beantragen</button>
             </div>
             <hr>
             <div class="accountData">
@@ -83,10 +101,45 @@
             </div>
             <hr>
     </main>
+    
+    <div id="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p class="addModal">Vor welchem Block soll der Neue hinzugefügt werden?</p>
+            <p class="deleteModal">Welcher Block soll gelöscht werden? (Überschriften werden auch als Block gezählt.)</p>
+            <p class="publishModal">Der Beitrag wird bald von einem Mitarbeiter überprüft und dann endgültig veröffentlicht. Wenn sie den Beitrag erneut Speichern, dann wird dieser wieder zu einem Entwurf und sie müssen erneut auf "Veröffentlichen" klicken.</p>
+            <select id="bloecke"></select>
+            <select class="addModal" id="blockType">
+                <option>Textblock</option>
+                <option>Überschrift</option>
+                <option>Unterüberschrift</option>
+            </select>
+            <button class="addModal" id="addBlockBtn">Hinzufügen</button>
+            <button class="addModal" id="addEnd">Am Schluss einfüggen</button>
+            <button class="deleteModal" id="deleteBlockBtn">Wirklich löschen?</button>
+        </div>
+    </div>
 
     <?php include "./footer.html" ?>
     <script>
+        //MODAL 
+        let modal = document.getElementById('modal');
+        let span = document.getElementsByClassName("close")[0];
+
+        span.addEventListener('click', () => {
+            modal.style.display = "none";
+        });
+
+        window.addEventListener('click', (event) => {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        });
+
+
+        let neuBtn = document.getElementById("neuBtn");
         let logoffBtn = document.getElementById('logoff');
+
         logoffBtn.addEventListener('click', ()=>{
             let xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
@@ -96,6 +149,21 @@
             }
             xhttp.open('POST', 'logoff.php', true);
             xhttp.send();
+        });
+        
+        //Custom Buttons
+        neuBtn.addEventListener('click', function(){
+            document.location.href='create.php';
+        });
+
+        let chgProfilbild = document.getElementById('chgProfilbild');
+        let chgBenutzername = document.getElementById('chgBenutzername');
+        let chgEmail = document.getElementById('chgEmail');
+        let chgPasswort = document.getElementById('chgPasswort');
+        let becomeAutor = document.getElementById('becomeAutor');
+
+        chgProfilbild.addEventListener('click', function(){
+            
         });
     </script>
 </body>

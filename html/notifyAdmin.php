@@ -7,6 +7,10 @@
  */
 
 //Import PHPMailer classes into the global namespace
+session_start();
+$titel = "Blog Published by " . $_SESSION['user'];
+$text = "Beitrag überprüfen und in Datenbank frei geben. \nID: ". $_SESSION['Blog_ID'];
+echo print_r($_SESSION);
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 

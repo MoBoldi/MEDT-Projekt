@@ -12,7 +12,10 @@
     <link href="../style/login.css" rel="stylesheet" type="text/css">
 
 </head>
-<?php 
+
+<body>
+<?php
+    include "./header.php";
     if (isset($_POST["send"])) {
         $eingabe = array();
         $error = array();
@@ -32,33 +35,28 @@
         if (empty($error)) {
             include 'db_connect.php';
 
-            $stmt = "SELECT status from login_user where email='" . $eingabe["email"]."'";
-            $result = $conn->query($stmt);
-            if ($result->fetch_row()[0] == 1){
+            $result = $conn->query("SELECT status from login_user where email='" . $eingabe["email"]."'");
+            if ($result->num_rows > 0 && $result->fetch_row()[0] == 1){
                 $error['authentication'] = 'Authentication';
             }
 
             include 'db_disconnect.php';
         }
-
+        
         if (empty($error)) {
-            session_start();
             include 'db_connect.php';
-            $passwort_hash = password_hash($eingabe['password'], PASSWORD_DEFAULT);
-            $result = $conn->query("SELECT * FROM login_user WHERE email = '".$eingabe["email"]."' AND password = '" . $passwort_hash . "'");
-            //$user = $result->fetch_all();
-                
+            $result = $conn->query("SELECT password FROM login_user WHERE email = '".$eingabe["email"]."'");
             //Überprüfung des Passworts
-            if ($result !== false) {
+            if ($result->num_rows > 0 && password_verify($eingabe['password'], $result->fetch_row()[0])) {
                 //Mail-Adresse des Users in Session speichern 
                 $_SESSION['user'] = $eingabe['email'];
                 header("Location: index.php");
                 die();
             } else {
                 $error['Datenbank'] = "E-Mail oder Passwort war ungültig<br>";
+                $errors = implode(', ', $error);
+                $err = 'Es sind Fehler aufgetreten: '.$errors;
             }
-
-            
 
             include 'db_disconnect.php';
 
@@ -70,9 +68,6 @@
         }
     }
 ?>
-
-<body>
-    <?php include "./header.php" ?>
     <div class="banner">
     <h1>Login</h1>
     </div>
@@ -89,11 +84,11 @@
             <br>
             <input type="submit" value="Absenden" name="send">
         </form>
-        <p style="text-align: center">Noch kein Account?<a href="register.php">Hier registrieren!</a></p>
+        <p style="text-align: center">Noch kein Account?<a href="register.php"> Hier registrieren!</a></p>
         <p id="errors" style="text-align: center;">
             <?php if(isset($err)){ echo $err; }?></p>
     </div>
-    <div id="loggedIn">
+    <div id="loggedIn" style="text-align: center">
         <p>You are already logged in.</p>
     </div>
     <?php include "./footer.html" ?>
@@ -101,11 +96,10 @@
     <script>
         let loginScreen = document.getElementById('loginScreen');
         let loggedIn = document.getElementById('loggedIn');
-        if (<?php echo isset($_SESSION['eingeloggt']);?>){
+        if (<?php echo isset($_SESSION['user']);?>){
             loginScreen.style.display = 'none';
             loggedIn.style.display = 'block';
         }
     </script>
 </body>
-
 </html>

@@ -29,7 +29,7 @@
         <button id="saveBtn">Speichern</button>
         <button id="publishBtn">Veröffentlichen</button>
         <button id="cancelBtn">Cancel</button>
-        <div id="test"></div>
+        <div id="test">Miau<?php echo print_r($_SESSION);?></div>
     </main>
 
     <div id="modal">
@@ -62,7 +62,6 @@
         let cancelBtn = document.getElementById('cancelBtn');
         let modal = document.getElementById('modal');
         let span = document.getElementsByClassName("close")[0];
-        let addSpan = document.getElementsByClassName("close")[1];
         let bloecke = document.getElementById('bloecke');
         let editable = document.getElementById('editable');
         let blockType = document.getElementById('blockType');
@@ -139,22 +138,17 @@
             text = text.replace(/contenteditable="true"/g, 'contenteditable="false"');
             let titel = document.getElementById('Titel').innerHTML;
             let xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function(){
-                if (this.readyState == 4 && this.status == 200){
-//Test bei Speichern 
-                    document.getElementById('test').innerHTML = this.responseText;
-                }
-            };
             xhttp.open("POST", 'db_insert_blog.php', true);
             xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             xhttp.send(`titel=${titel}&text=${text}&status=${status}`);
         }
 
-        //Admin benachrichtigen, dass der User etwas veröffentlicht hat -> Admin muss diesen Beitrag online stellen. 
+        //Admin benachrichtigen, dass der User etwas veröffentlicht hat -> Admin muss diesen Beitrag online stellen.
         function notifyAdmin(){
-            let titel = "Blog Published by " . $_SESSION['user'];
-            let text = "Beitrag überprüfen und in Datenbank frei geben. \nID: ". $_SESSION['Blog_ID'];
-            require('notifyAdmin.php');
+            let xhttp = new XMLHttpRequest();
+            xhttp.open('POST', 'notifyAdmin.php', true);
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.send();
         }
 
         function getBloecke() {
@@ -196,5 +190,4 @@
     </script>
 
 </body>
-
 </html>
