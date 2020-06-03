@@ -19,8 +19,8 @@
     <main>
         <table>
             <tr>
-                <th>date</th>
-                <th>description</th>
+                <th>Datum</th>
+                <th>Beschreibung</th>
             </tr>
             <tr>
                 <td>12.12.2019</td>

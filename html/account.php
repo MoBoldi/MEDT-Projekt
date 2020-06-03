@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    
+
     <?php include "./header.php" ?>
     <div class="banner">
         <h1>Account</h1>
@@ -22,86 +22,75 @@
         <div id="account">
             <img id="logo" alt="your logo" src="../data/profile.png" width="100px" height="100px">
             <div>
-            <h3><?php
-            //Username und Mail ausgeben in Account.php
-                require('db_connect.php');
-                //username ausgeben
-                $result = $conn->query("SELECT username FROM login_user where email='" . $_SESSION["user"] . "'");
-                
+                <h3><?php
+                    //Username und Mail ausgeben in Account.php
+                    require('db_connect.php');
+                    //username ausgeben
+                    $result = $conn->query("SELECT username FROM login_user where email='" . $_SESSION["user"] . "'");
 
-                if ($result->num_rows > 0){
-                    echo $result->fetch_row()[0];
-                }
-                require('db_disconnect.php');
-            ?></h3>
-            <p><?php echo $_SESSION['user'];?></p>
+
+                    if ($result->num_rows > 0) {
+                        echo $result->fetch_row()[0];
+                    }
+                    require('db_disconnect.php');
+                    ?></h3>
+                <p><?php echo $_SESSION['user']; ?></p>
             </div>
         </div>
         <?php
         //Blog-Beiträge des Users auflisten 
-            require('db_connect.php');
-            $result = $conn->query("select status, id from login_user where email = '". $_SESSION['user'] ."'");  
-            $result = $result->fetch_assoc();
-            //check ob User Admin oder Autor
-            if ($result['status'] == 3 || $result['status'] == 2){
-                $result = $conn->query("SELECT titel, Blog_ID FROM blog WHERE Autor = " . $result['id']);
-                $rows = $result->num_rows;
-                $result = $result->fetch_all();
-                //Blog-Beiträge ausgeben
-                echo '
+        require('db_connect.php');
+        $result = $conn->query("select status, id from login_user where email = '" . $_SESSION['user'] . "'");
+        $result = $result->fetch_assoc();
+        //check ob User Admin oder Autor
+        if ($result['status'] == 3 || $result['status'] == 2) {
+            $result = $conn->query("SELECT titel, Blog_ID FROM blog WHERE Autor = " . $result['id']);
+            $rows = $result->num_rows;
+            $result = $result->fetch_all();
+            //Blog-Beiträge ausgeben
+            echo '
                 <div class="accountData">
                     <h3>Eigene Beiträge</h3>
                     <button id="neuBtn">Neu</button>
                 </div>
                     <div id="userEntrys">
                     <div id="entrys">';
-                for ($i = 0; $i < $rows; $i++){
-                    echo '<div class="entry" style="background-image:url(../data/kreuzfahrt.jpg)">
-                    <a style="all:unset" href="blogSite.php?id='. $result[$i][1] . '"><h3>'. $result[$i][0] . '</h3>
-                    </a></div>';
-                }
-                echo "</div></div>";
+            for ($i = 0; $i < $rows; $i++) {
+                echo '<div class="entry" style="background-image:url(../data/kreuzfahrt.jpg)">
+                    <a style="all:unset" href="blogSite.php?id=' . $result[$i][1] . '"><h3>' . $result[$i][0] . '</h3>
+                    </a>
+                    <div style="display: flex; ">
+                    <a href="create.php?id='. $result[$i][1] .'" style="margin: 5px"><img src="../data/edit.png" alt="edit" width="30px" height="30px"></a>
+                    <a onclick="deleteBlog(event)" style="margin: 7px" id='. $result[$i][1] .'><img src="../data/delete.png" alt="delete" width="30px" height="30px"></a>
+                    </div></div>';
             }
-            require('db_disconnect.php');
+            echo "</div></div>";
+        }
+        require('db_disconnect.php');
         ?>
-        
-            <div class="accountData">
-                <h3>Profilbild</h3>
-                <button id="chgProfilbild">Ändern</button>
-            </div>
-            <hr>
-            <div class="accountData">
-                <h3>Benutzername</h3>
-                <button id="chgBenutzername">Ändern</button>
-            </div>
-            <hr>
-            <div class="accountData">
-                <h3>Email-Adresse</h3>
-                <button id="chgEmail">Ändern</button>
-            </div>
-            <hr>
-            <div class="accountData">
-                <h3>Passwort</h3>
-                <button id="chgPasswort">Ändern</button>
-            </div>
-            <hr>
-            <div class="accountData">
-                <h3>Author werden</h3>
-                <button id="becomeAutor">Beantragen</button>
-            </div>
-            <hr>
-            <div class="accountData">
-                <h3>Konto löschen</h3>
-                <button id="delete">Löschen</button>
-            </div>
-            <hr>
-            <div class="accountData">
-                <h3>Abmelden</h3>
-                <button id="logoff">Abmelden</button>
-            </div>
-            <hr>
+
+        <div class="accountData">
+            <h3>Profilbild</h3>
+            <button id="chgProfilbild">Ändern</button>
+        </div>
+        <hr>
+        <div class="accountData">
+            <h3>Author werden</h3>
+            <button id="becomeAutor">Beantragen</button>
+        </div>
+        <hr>
+        <div class="accountData">
+            <h3>Konto löschen</h3>
+            <button id="delete">Löschen</button>
+        </div>
+        <hr>
+        <div class="accountData">
+            <h3>Abmelden</h3>
+            <button id="logoff">Abmelden</button>
+        </div>
+        <hr>
     </main>
-    
+
     <div id="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
@@ -140,7 +129,7 @@
         let neuBtn = document.getElementById("neuBtn");
         let logoffBtn = document.getElementById('logoff');
 
-        logoffBtn.addEventListener('click', ()=>{
+        logoffBtn.addEventListener('click', () => {
             let xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
@@ -150,21 +139,41 @@
             xhttp.open('POST', 'logoff.php', true);
             xhttp.send();
         });
-        
+
         //Custom Buttons
-        neuBtn.addEventListener('click', function(){
-            document.location.href='create.php';
+        neuBtn.addEventListener('click', function() {
+            let xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    location.reload();
+                }
+            }
+            xhttp.open('POST', 'db_create_blog.php', true);
+            xhttp.send();
         });
 
         let chgProfilbild = document.getElementById('chgProfilbild');
-        let chgBenutzername = document.getElementById('chgBenutzername');
-        let chgEmail = document.getElementById('chgEmail');
-        let chgPasswort = document.getElementById('chgPasswort');
         let becomeAutor = document.getElementById('becomeAutor');
 
-        chgProfilbild.addEventListener('click', function(){
-            
+        chgProfilbild.addEventListener('click', function() {
+
         });
+
+        function edit(event){
+            window.location.href = "localhost/medt-projekt/html/create.php?id="+event.id;
+        }
+        function deleteBlog(event){
+            console.log(event.target);
+            let xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200){
+                    console.log(this.responseText);
+                }
+            }
+            xhttp.open('POST', 'db_delete_blog.php', true);
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.send("id=" + event.target.parentElement.id); 
+        }
     </script>
 </body>
 

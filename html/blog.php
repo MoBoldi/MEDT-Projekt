@@ -16,32 +16,32 @@
     <h1>Blog</h1>
     </div>
     <main>
-        <section>
-            <div class="imgCol">
-                <img src="../data/kreuzfahrt.jpg" alt="Kreuzfahrt">
-            </div>
-            <div class="textCol">
-                <h2><a href="blogSite.php">3 Dinge über Kreuzfahrten</a></h2> <!-- max. 38 Zeichen -->
-                <div class="authorCol">
-                    <img src="../data/profile.png" alt="profile picture">
-                    <p class="authorName">by Max Mustermann</p>
+        <?php
+            require('db_connect.php');
+            $result = $conn->query("select blog_id, titel, vorschau, u.username from blog join login_user u on (blog.autor=u.id) where blog.status = 0");
+            
+            $rows = $result->num_rows;
+            $result = $result->fetch_all();
+            //Blog-Beiträge ausgeben
+            for ($i = 0; $i < $rows; $i++){
+                echo '<section>
+                <div class="imgCol">
+                    <img src="../data/kreuzfahrt.jpg" alt="Kreuzfahrt">
                 </div>
-                <p class="articlePreview">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the ...</p> <!-- max.: 400 Zeichen -->
-            </div>
-        </section>
-        <section>
-            <div class="textCol left">
-                <h2>Fleischkonsum, Umwelt und Klima</h2> <!-- max. 38 Zeichen -->
-                <div class="authorCol">
-                    <img src="../data/profile.png" alt="profile picture">
-                    <p class="authorName">by Max Mustermann</p>
+                <div class="textCol">
+                    <h2><a href="blogSite.php?id=' . $result[$i][0] . '">'. $result[$i][1] . '</a></h2> 
+                    <div class="authorCol">
+                        <img src="../data/profile.png" alt="profile picture">
+                        <p class="authorName">by ' . $result[$i][3] . '</p>
+                    </div>
+                    <p class="articlePreview">' . substr($result[$i][2], 0, 400) . ' ...</p> <!-- max.: 400 Zeichen -->
                 </div>
-                <p class="articlePreview">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the ...</p> <!-- max.: 400 Zeichen -->
-            </div>
-            <div class="imgCol">
-                <img src="../data/fleisch.jpg" alt="fleisch">
-            </div>
-        </section>
+            </section>';
+            }
+
+            require('db_disconnect.php');
+        ?>
+        
     </main>
     <?php include "./footer.html" ?>
 

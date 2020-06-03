@@ -1,8 +1,8 @@
 <?php
 include 'db_connect.php';
 
-if (isset($_SESSION['Blog_ID'])) {
-    $Blog_ID = $_SESSION['Blog_ID'];
+if (isset($_GET['id'])) {
+    $Blog_ID = $_GET['id'];
 } else {
     $Blog_ID = 0;
 }

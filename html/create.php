@@ -29,7 +29,6 @@
         <button id="saveBtn">Speichern</button>
         <button id="publishBtn">Veröffentlichen</button>
         <button id="cancelBtn">Cancel</button>
-        <div id="test">Miau<?php echo print_r($_SESSION);?></div>
     </main>
 
     <div id="modal">
@@ -135,12 +134,25 @@
 
         function save(status) {
             let text = editable.innerHTML;
-            text = text.replace(/contenteditable="true"/g, 'contenteditable="false"');
+            text = text.replace(/contenteditable="true"/g, 'contenteditable="false"').trim();
             let titel = document.getElementById('Titel').innerHTML;
+            let i;
+            for (i = 0; editable.children[i].tagName != "P"; i++){
+            }
+            let vorschau = editable.children[i].innerHTML;
+            let queryString = window.location.search;
+            let urlParams = new URLSearchParams(queryString);
+            console.log(urlParams.get('id'));
             let xhttp = new XMLHttpRequest();
-            xhttp.open("POST", 'db_insert_blog.php', true);
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                // Typical action to be performed when the document is ready:
+                console.log(xhttp.responseText);
+                }
+            };
+            xhttp.open("POST", 'db_insert_blog.php?id=' + urlParams.get('id'), true);
             xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            xhttp.send(`titel=${titel}&text=${text}&status=${status}`);
+            xhttp.send(`titel=${titel}&text=${text}&status=${status}&vorschau=${vorschau}`);
         }
 
         //Admin benachrichtigen, dass der User etwas veröffentlicht hat -> Admin muss diesen Beitrag online stellen.
