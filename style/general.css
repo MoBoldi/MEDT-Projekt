@@ -24,6 +24,14 @@ a {
   text-decoration: none;
 }
 
+button {
+  width: 120px;
+  height: 30px;
+  background-color: white;
+  border: solid 1px rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+}
+
 header {
   margin: 0 30px;
   color: #575757;
@@ -71,6 +79,7 @@ header nav {
   box-sizing: content-box;
 }
 header nav button {
+  all: unset;
   font-weight: normal;
   transition: font-weight 0.2s;
 }
