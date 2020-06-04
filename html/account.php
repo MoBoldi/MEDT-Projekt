@@ -70,11 +70,6 @@
         ?>
 
         <div class="accountData">
-            <h3>Profilbild</h3>
-            <button id="chgProfilbild">Ändern</button>
-        </div>
-        <hr>
-        <div class="accountData">
             <h3>Author werden</h3>
             <button id="becomeAutor">Beantragen</button>
         </div>
@@ -141,39 +136,58 @@
         });
 
         //Custom Buttons
-        neuBtn.addEventListener('click', function() {
+        if(typeof(neuBtn) != 'undefined' && neuBtn != null){
+            neuBtn.addEventListener('click', function() {
+                let xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        location.reload();
+                    }
+                }
+                xhttp.open('POST', 'db_create_blog.php', true);
+                xhttp.send();
+            });
+        };
+
+        let becomeAutor = document.getElementById('becomeAutor');
+        becomeAutor.addEventListener('click', ()=>{
             let xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
-                    location.reload();
+                    console.log(this.responseText);
                 }
             }
-            xhttp.open('POST', 'db_create_blog.php', true);
+            xhttp.open('POST', 'mail_autor.php', true);
             xhttp.send();
-        });
-
-        let chgProfilbild = document.getElementById('chgProfilbild');
-        let becomeAutor = document.getElementById('becomeAutor');
-
-        chgProfilbild.addEventListener('click', function() {
-
         });
 
         function edit(event){
             window.location.href = "localhost/medt-projekt/html/create.php?id="+event.id;
         }
         function deleteBlog(event){
-            console.log(event.target);
             let xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200){
-                    console.log(this.responseText);
+                    location.reload();
                 }
             }
             xhttp.open('POST', 'db_delete_blog.php', true);
             xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             xhttp.send("id=" + event.target.parentElement.id); 
         }
+
+        let deleteUser = document.getElementById('delete');
+        deleteUser.addEventListener('click', ()=>{
+            let xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        window.location.href='index.php';
+                    }
+                }
+            xhttp.open('POST', 'db_delete_user.php', true);
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.send(); 
+        })
     </script>
 </body>
 

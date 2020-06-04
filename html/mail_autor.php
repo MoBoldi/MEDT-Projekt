@@ -1,4 +1,5 @@
-<?php
+<?php 
+
 /**
  * This example shows settings to use when sending via Google's Gmail servers.
  * This uses traditional id & password authentication - look at the gmail_xoauth.phps
@@ -8,8 +9,8 @@
 
 //Import PHPMailer classes into the global namespace
 session_start();
-$titel = "Blog Published by " . $_SESSION['user'];
-$text = "Beitrag überprüfen und in Datenbank frei geben. \nID: ". $_POST['id'];
+$titel = "User möchte Autor werden: " . $_SESSION['user'];
+$text = "User überprüfen und in Datenbank frei geben. \nUsername: ". $_SESSION['user'];
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 
@@ -100,3 +101,4 @@ function save_mail($mail)
 
     return $result;
 }
+?>

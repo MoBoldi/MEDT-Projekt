@@ -157,10 +157,12 @@
 
         //Admin benachrichtigen, dass der User etwas veröffentlicht hat -> Admin muss diesen Beitrag online stellen.
         function notifyAdmin(){
+            let queryString = window.location.search;
+            let urlParams = new URLSearchParams(queryString);
             let xhttp = new XMLHttpRequest();
             xhttp.open('POST', 'notifyAdmin.php', true);
             xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            xhttp.send();
+            xhttp.send('id='+ urlParams.get('id'));
         }
 
         function getBloecke() {
